@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: pillow.ma
-//Last modified: Tue, Mar 31, 2026 03:08:41 PM
+//Last modified: Tue, Mar 31, 2026 05:03:58 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "33277DED-4750-3821-52E3-06B3E03477F2";
+fileInfo "UUID" "D748437B-4808-BDEF-4AE8-77A87CC0C594";
 createNode transform -s -n "persp";
 	rename -uid "E6F5F175-49A9-CFAF-13A3-AC8D317F4D31";
 	setAttr ".v" no;
@@ -2134,20 +2134,20 @@ createNode mesh -n "pCubeShape2" -p "pCube2";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F67E8BBB-4B54-CC86-81F4-CE80A513ADF5";
+	rename -uid "11F40860-4EEB-1585-6DFB-7AAAACC5809E";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "2B4A84E4-4EE8-D945-1B77-7F9882D3BBD5";
+	rename -uid "8E182560-486D-703F-5293-F3B02EFE7E73";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "708D5597-4A42-16C9-021F-F183767B9E9C";
+	rename -uid "D9D6018B-4F18-D5D6-70A8-E4995681A511";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "70B24A7A-423C-C6CC-2579-4B9BB745DB8C";
+	rename -uid "08A8D913-49E5-B5DC-035B-A680CB8B0E1E";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "2C20B3C3-44FA-74F6-7944-CBB22798E109";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1A4AC246-4F3C-3581-A0D7-E095CDB46C8D";
+	rename -uid "272CC1A3-45EA-038E-EA60-B389E20DF606";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E677C17B-4D0C-EF8B-F50B-C685B67B37F1";
 	setAttr ".g" yes;
@@ -2209,10 +2209,10 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].vl" -type "double2" -323.80951094248991 -328.57141551517361 ;
 	setAttr ".tgi[0].vh" -type "double2" 324.99998708566085 328.57141551517361 ;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "3EE03ACB-45EE-EEFF-AA74-18B4F8DD4365";
+	rename -uid "B43B95E1-4599-08F1-777D-0A8544566E5B";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -805.56333899028675 -430.67449958756885 ;
-	setAttr ".tgi[0].vh" -type "double2" 925.16461856955073 436.37306669970383 ;
+	setAttr ".tgi[0].vl" -type "double2" -366.75130265004657 -208.09944763340297 ;
+	setAttr ".tgi[0].vh" -type "double2" 497.11421933766559 224.67364947133606 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2241,7 +2241,6 @@ select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
-select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";

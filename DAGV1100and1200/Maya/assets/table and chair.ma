@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: table and chair.ma
-//Last modified: Tue, Mar 31, 2026 04:39:11 PM
+//Last modified: Tue, Mar 31, 2026 07:33:03 PM
 //Codeset: 1252
 file -rdi 1 -ns "Lamp" -rfn "LampRN" -op "v=0;" -typ "mayaAscii" "C:/Users/kitan/GitRepos/Essentials/Essentials-1200/DAGV1100and1200/Maya//scenes/Lamp.ma";
 file -rdi 1 -ns "Chair" -rfn "ChairRN" -op "v=0;" -typ "mayaAscii" "C:/Users/kitan/GitRepos/Essentials/Essentials-1200/DAGV1100and1200/Maya//scenes/Chair.ma";
@@ -35,19 +35,19 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "61CC4731-4811-500A-158B-3AAD64AE0AA0";
+fileInfo "UUID" "A5E76ED6-409A-D2F5-48DD-32969B96F083";
 createNode transform -s -n "persp";
 	rename -uid "AAE79371-4D28-9195-63D0-B2BA128844B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -50.505855440443355 15.654104759363246 -2.8138661218668037 ;
-	setAttr ".r" -type "double3" -11.73835272487292 -1895.4000000006993 -359.99999999866606 ;
+	setAttr ".t" -type "double3" -31.426051075204771 17.151234745122629 -21.345844737308063 ;
+	setAttr ".r" -type "double3" -11.738352723491795 -1926.1999999999732 -359.9999999998962 ;
 	setAttr ".rp" -type "double3" 0 1.3322676295501878e-15 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 1.2189530427630793e-15 8.2744458005593335e-16 -6.4243870884173312e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A7F5F3F3-4EB9-8CAA-1A1E-309C508001C7";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 57.821244629672293;
+	setAttr ".coi" 36.594875842168413;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -128,14 +128,13 @@ createNode mesh -n "floorShape" -p "floor";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.32939657045038739 0.029572976170511356 ;
+	setAttr ".pv" -type "double2" 0.30545409023761749 0.78009265661239624 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 16 ".uvst[0].uvsp[0:15]" -type "float2" 0.25241867 0.052512851
-		 0.25204927 0.0077222474 0.25287497 0.0077154413 0.25324434 0.052506048 0.30048126
-		 0.007322859 0.30085063 0.052113455 0.29803494 0.052136686 0.29766554 0.0073460676
-		 0.30782232 0.0079987291 0.35097083 0.0079987291 0.35097083 0.051147223 0.30782232
-		 0.051147223 0.29803926 0.052658971 0.25324866 0.053028319 0.25287086 0.0072145946
-		 0.29766142 0.0068452395;
+	setAttr -s 16 ".uvst[0].uvsp[0:15]" -type "float2" 0.25636271 0.80266869
+		 0.25599331 0.75787812 0.25681901 0.75787133 0.25718838 0.8026619 0.3044253 0.75747871
+		 0.30479467 0.80226934 0.30197898 0.80229259 0.30160958 0.75750196 0.31176636 0.75815457
+		 0.35491487 0.75815457 0.35491487 0.80130309 0.31176636 0.80130309 0.3019833 0.80281484
+		 0.2571927 0.80318421 0.2568149 0.75737047 0.30160546 0.7570011;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
@@ -373,22 +372,22 @@ createNode materialxStack -n "materialXStackShape1" -p "materialXStack1";
 	setAttr -k off ".v";
 	setAttr ".docs" -type "string" "[\n    {\n        \"document\": \"AAABb3icdZBNDoIwEIX3nGIyBxCJGxf8bFyqVyAjDErSH9KCgdtbqZim0U0Xb17f92byapYCnmxsr1WB2W6PVZnkkkY2PYk5HB2OCI0W2tiBGi7QPba5Y5kA5Bda6EzyxmYERdJNAyVDGJfBaXYy3fvXg1o2CEq33HLnvddTLby9jmzpSviIW7OAUseYzRMQXHoUsPZ2ub0apq1zBP5b+teGvmUaUdwt0+8xy+QFXmh+Vw==\",\n        \"name\": \"document1\"\n    }\n]\n";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "090B429D-4891-3788-E621-13B3909BD1A7";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "CBDCA88D-452B-E25D-61CF-E680A7F51D28";
+	setAttr -s 5 ".lnk";
+	setAttr -s 5 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "05BC6097-4372-6333-8612-A9BA65AF6976";
+	rename -uid "781E0C85-45A5-59BA-4D4B-3FA50800C43F";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "BB3B6D0E-4BA4-0F63-6A06-BCB537C5A72A";
+	rename -uid "5FBD8799-423E-52C5-CE51-F5B92577A01E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F54962DC-4693-1295-55F1-148809EF70CF";
+	rename -uid "F8DE53CB-40FE-9500-0524-E99A908D258B";
 	setAttr ".cdl" 4;
 	setAttr -s 5 ".dli[1:4]"  4 2 0 1;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "08B08339-433F-31DE-5765-3EB53A6872EF";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "F1055C90-41DE-DFC9-48F9-B3B241EBB7FD";
+	rename -uid "59BC9752-4B6F-DA26-B623-7C873E35D1B8";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7E792B5F-42D2-518D-7698-07ADCA43EA10";
 	setAttr ".g" yes;
@@ -410,7 +409,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1957\n            -height 1044\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 930\n            -height 1132\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -438,8 +437,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
 		+ "                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
 		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1044\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1044\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 930\\n    -height 1132\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 930\\n    -height 1132\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -912,31 +911,31 @@ createNode reference -n "bookshelfandbooksRN";
 		"pt[0:23]" (" -s 24 -type \"float3\" -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.2171000"
 		+ "9999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946 -6.21710009999999968 -0.26063218999999999 8.77786249999999946"
 		)
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book30|bookshelfandbooks:bookShape30.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book33|bookshelfandbooks:bookShape33.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book31|bookshelfandbooks:bookShape31.instObjGroups" 
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book32|bookshelfandbooks:bookShape32.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book27|bookshelfandbooks:bookShape27.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book28|bookshelfandbooks:bookShape28.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book32|bookshelfandbooks:bookShape32.instObjGroups" 
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book30|bookshelfandbooks:bookShape30.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book22|bookshelfandbooks:bookShape22.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book29|bookshelfandbooks:bookShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book23|bookshelfandbooks:bookShape23.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book34|bookshelfandbooks:bookShape34.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book26|bookshelfandbooks:bookShape26.instObjGroups" 
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book29|bookshelfandbooks:bookShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book31|bookshelfandbooks:bookShape31.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book24|bookshelfandbooks:bookShape24.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bookshelfandbooks:groupId1.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book24|bookshelfandbooks:bookShape24.instObjGroups" 
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book28|bookshelfandbooks:bookShape28.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book33|bookshelfandbooks:bookShape33.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book23|bookshelfandbooks:bookShape23.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|bookshelfandbooks:shelf|bookshelfandbooks:book26|bookshelfandbooks:bookShape26.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bookshelfandbooks:groupId1.groupId" "|bookshelfandbooks:shelf|bookshelfandbooks:shelfShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -1426,37 +1425,37 @@ createNode reference -n "potted_plantRN";
 		+ "869999999931 -4.415894 -2.14200260000000009 9.5575171000000001 -4.40569210000000044 -2.34399630000000014 9.63062569999999951 -4.39361 -2.52862330000000002 9.71720889999999926 -4.37938310000000008 -2.6938238000000001 9.81916329999999959 -4.36275429999999975 -2.83766939999999979 9.93832779999999971 -4.34346150000000009 -2.9584693999999998 10.076587 -4.32120369999999987 -3.05476860000000006 10.236092 -4.29561849999999978 -3.1251720999999999 10.419442 -4.266293 -3.16799739999999996 10.629595 -4.23281859999999988 -3.181134 10.869482 -4.19483090000000036 -3.16218539999999981 11.141712 -4.15201330000000013 -3.10872029999999988 11.448553 -4.46849730000000012 1.46421040000000002 9.2320366000000007 -4.468925 1.06212369999999989 9.22896859999999997 -4.4689603 0.68194412999999998 9.22871589999999919 -4.46851730000000025 0.32258734 9.23189160000000086 -4.46751210000000043 -0.017039328999999999 9.23909379999999913 -4.46585989999999988 -0.33801982000000003 9.2509364999999999 -4.46347570000000005 -0.64145052000000002 9.26802"
 		+ "059999999983 -4.4602757000000004 -0.92841779999999996 9.29095550000000081 -4.45617440000000009 -1.20000869999999993 9.32034589999999952 -4.45108749999999986 -1.45731509999999997 9.35680009999999918 -4.44493009999999966 -1.70142349999999998 9.40092369999999988 -4.43761350000000032 -1.9333612 9.45335580000000064 -4.4289436000000002 -2.152647 9.51548580000000044 -4.41862249999999968 -2.357306 9.58945180000000086 -4.40634679999999967 -2.54529050000000012 9.67742349999999973 -4.39181329999999992 -2.71455840000000004 9.7815732999999998 -4.37471959999999971 -2.863066 9.90407090000000068 -4.35476259999999993 -2.98876829999999982 10.047087 -4.3316397999999996 -3.08962320000000012 10.212793 -4.30504749999999969 -3.16358039999999985 10.40336 -4.274683 -3.20860479999999981 10.620959 -4.24024339999999977 -3.222647 10.86776 -4.20142650000000017 -3.20366639999999991 11.145933 -4.15792889999999993 -3.14961339999999979 11.45765"
 		)
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:flower_centerShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal5|potted_plant:petalShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:stem|potted_plant:stemShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal2|potted_plant:petalShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:PotShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal11|potted_plant:petalShape11.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal4|potted_plant:petalShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal8|potted_plant:petalShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:Leaf2|potted_plant:LeafShape2.instObjGroups" 
+		3 "|potted_plant:Pot|potted_plant:dirt|potted_plant:dirtShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|potted_plant:Pot|potted_plant:Leaf1|potted_plant:LeafShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal7|potted_plant:petalShape7.instObjGroups" 
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal11|potted_plant:petalShape11.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:dirt|potted_plant:dirtShape.instObjGroups" 
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal8|potted_plant:petalShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal2|potted_plant:petalShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal7|potted_plant:petalShape7.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal3|potted_plant:petalShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:Leaf2|potted_plant:LeafShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal1|potted_plant:petalShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:PotShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal9|potted_plant:petalShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal5|potted_plant:petalShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal10|potted_plant:petalShape10.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal9|potted_plant:petalShape9.instObjGroups" 
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:flower_centerShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:flower_center|potted_plant:petal4|potted_plant:petalShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|potted_plant:Pot|potted_plant:stem|potted_plant:stemShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "potted_plantRN" "|potted_plant:Pot|potted_plant:PotShape.instObjGroups" 
 		"potted_plantRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -1539,12 +1538,12 @@ createNode reference -n "unit15_labsSceneRN";
 		2 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2" 
-		"rotatePivot" " -type \"double3\" 7.95676070664115542 3.9216327410028331 6.11722674020773205"
+		"rotatePivot" " -type \"double3\" 7.95676070664115542 3.9216327410028331 6.11722674020773294"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2" 
-		"scalePivot" " -type \"double3\" 7.95676070664115542 3.9216327410028331 6.11722674020773205"
+		"scalePivot" " -type \"double3\" 7.95676070664115542 3.9216327410028331 6.11722674020773294"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2|unit15_labsScene:pillow2Shape" 
 		"uvPivot" " -type \"double2\" 2.59902679920196533 1.70229929685592651"
@@ -1565,12 +1564,12 @@ createNode reference -n "unit15_labsSceneRN";
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1" 
-		"rotatePivot" " -type \"double3\" 2.55567824953808298 2.37609932938465507 10.59864398183955636"
+		"rotatePivot" " -type \"double3\" 2.55567824953808165 2.37609932938465507 10.59864398183955636"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1" 
-		"scalePivot" " -type \"double3\" 2.55567824953808298 2.37609932938465507 10.59864398183955636"
+		"scalePivot" " -type \"double3\" 2.55567824953808165 2.37609932938465507 10.59864398183955636"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1|unit15_labsScene:cushionShape1" 
 		"uvPivot" " -type \"double2\" 0.39615756452132933 0.030765035380512229"
@@ -1588,12 +1587,12 @@ createNode reference -n "unit15_labsSceneRN";
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2" 
-		"rotatePivot" " -type \"double3\" 5.56111769313442306 2.29484309343378223 4.53893992118532452"
+		"rotatePivot" " -type \"double3\" 5.56111769313442394 2.29484309343378223 4.53893992118532452"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2" 
-		"scalePivot" " -type \"double3\" 5.56111769313442306 2.29484309343378223 4.53893992118532452"
+		"scalePivot" " -type \"double3\" 5.56111769313442394 2.29484309343378223 4.53893992118532452"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2|unit15_labsScene:cushionShape2" 
 		"uvPivot" " -type \"double2\" 0.43802246451377869 0.044499054551124573"
@@ -1611,12 +1610,12 @@ createNode reference -n "unit15_labsSceneRN";
 		2 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1" 
-		"rotatePivot" " -type \"double3\" 6.64115869459021546 0.46247548970586472 8.93686402262843238"
+		"rotatePivot" " -type \"double3\" 6.64115869459021724 0.46247548970586472 8.93686402262843238"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1" 
-		"scalePivot" " -type \"double3\" 6.64115869459021546 0.46247548970586472 8.93686402262843238"
+		"scalePivot" " -type \"double3\" 6.64115869459021724 0.46247548970586472 8.93686402262843238"
 		
 		2 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1|unit15_labsScene:legs1Shape" 
 		"uvPivot" " -type \"double2\" 1.56335508823394775 1.42202740907669067"
@@ -1683,23 +1682,9 @@ createNode reference -n "unit15_labsSceneRN";
 		+ "4 17.543671 5.93956850000000003 0.12738872000000001 17.984531 6.53055520000000023 0.12738933 17.128658 6.38880439999999972 0.12738933 17.141356 6.49257609999999996 0.11608374 17.199944 16.939943 0.12738930000000001 -2.66193010000000019 17.043715 0.11608371000000001 -2.60334250000000011 17.01338 0.11608371000000001 -2.546407 16.909609 0.12738930000000001 -2.60499409999999987 17.471436 0.12738872000000001 -3.65947220000000017 6.37114519999999995 0.12738930000000001 17.069561 6.44193890000000025 0.12738930000000001 17.294983 17.497358 -0.21854496000000001 -3.45478130000000005 17.37475 -0.21854496000000001 -3.84518929999999992 17.37475 -0.36280328000000001 -3.84518929999999992 17.497358 -0.36280328000000001 -3.45478130000000005 5.73546409999999973 -0.21854496000000001 18.000425 6.12117959999999961 -0.21854496000000001 17.897013 6.12117959999999961 -0.36280328000000001 17.897013 5.73546409999999973 -0.36280328000000001 18.000425 6.12117959999999961 0.11608374 17.897013 5.73546409999999973 0.11608374 18.000425 17.3"
 		+ "7475 0.11608374 -3.84518929999999992 17.497358 0.11608374 -3.45478130000000005"
 		)
-		3 "unit15_labsScene:groupId14.groupId" "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow1|unit15_labsScene:pillow1Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "unit15_labsScene:groupId14.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "|unit15_labsScene:couch|unit15_labsScene:base|unit15_labsScene:baseShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1|unit15_labsScene:cushionShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "unit15_labsScene:groupId13.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2|unit15_labsScene:pillow2Shape.instObjGroups" 
+		3 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2|unit15_labsScene:cushionShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "unit15_labsScene:groupId13.groupId" "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1|unit15_labsScene:legs1Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -1707,8 +1692,22 @@ createNode reference -n "unit15_labsSceneRN";
 		""
 		3 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs1|unit15_labsScene:legs1Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion2|unit15_labsScene:cushionShape2.instObjGroups" 
+		3 "|unit15_labsScene:couch|unit15_labsScene:base|unit15_labsScene:baseShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2|unit15_labsScene:pillow2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|unit15_labsScene:couch|unit15_labsScene:Cushions|unit15_labsScene:cushion1|unit15_labsScene:cushionShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "unit15_labsScene:groupId14.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "unit15_labsScene:groupId14.groupId" "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|unit15_labsScene:couch|unit15_labsScene:legs|unit15_labsScene:legs2|unit15_labsScene:legs2Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "unit15_labsScene:groupId13.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		5 3 "unit15_labsSceneRN" "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow1|unit15_labsScene:pillow1Shape.instObjGroups" 
 		"unit15_labsSceneRN.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 3 "unit15_labsSceneRN" "|unit15_labsScene:couch|unit15_labsScene:pillows|unit15_labsScene:pillow2|unit15_labsScene:pillow2Shape.instObjGroups" 
@@ -1753,1703 +1752,71 @@ createNode reference -n "sharedReferenceNode";
 	rename -uid "3B4969BE-445B-CA25-AFC1-909E10FD68EF";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sharedReferenceNode";
-createNode reference -n "pillowRN";
-	rename -uid "EB9FDFDE-48F1-4D99-C79B-A3A374377B1A";
-	setAttr ".phl[1]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"pillowRN"
-		"pillowRN" 0
-		"pillowRN" 836
-		2 "|pillow:pCube2" "translate" " -type \"double3\" 0 0 0"
-		2 "|pillow:pCube2" "rotate" " -type \"double3\" 0 0 0"
-		2 "|pillow:pCube2" "scale" " -type \"double3\" 1 1 1"
-		2 "|pillow:pCube2" "rotatePivot" " -type \"double3\" 8.51554751787019626 4.0619897374794478 -0.74984531449130642"
-		
-		2 "|pillow:pCube2" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|pillow:pCube2" "scalePivot" " -type \"double3\" 8.51554751787019626 4.0619897374794478 -0.74984531449130642"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvPivot" " -type \"double2\" 0.18260924253172761 0.27265000335453371"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints" " -s 454"
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[0]" " -type \"float2\" 0.18173532000000001 0.28499915999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[1]" " -type \"float2\" 0.17872832999999999 0.28293473000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[2]" " -type \"float2\" 0.1807069 0.28077254000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[3]" " -type \"float2\" 0.16540889 0.28555003000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[4]" " -type \"float2\" 0.16545561 0.28886100999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[5]" " -type \"float2\" 0.16544170999999999 0.28664747000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[6]" " -type \"float2\" 0.16542335999999999 0.28112029999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[7]" " -type \"float2\" 0.16566506 0.28229553000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[8]" " -type \"float2\" 0.16711596000000001 0.25962842000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[9]" " -type \"float2\" 0.16815382000000001 0.26166319999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[10]" " -type \"float2\" 0.16715430000000001 0.26602334"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[11]" " -type \"float2\" 0.18171133 0.28595394000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[12]" " -type \"float2\" 0.18402191000000001 0.28689756999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[13]" " -type \"float2\" 0.177304 0.28681949000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[14]" " -type \"float2\" 0.19623815 0.27443128999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[15]" " -type \"float2\" 0.19754107000000001 0.27800944"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[16]" " -type \"float2\" 0.19496699000000001 0.28009155000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[17]" " -type \"float2\" 0.16810627 0.28709572999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[18]" " -type \"float2\" 0.16861536999999999 0.28952931999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[19]" " -type \"float2\" 0.16756536 0.28960401000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[20]" " -type \"float2\" 0.16871810000000001 0.28230866999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[21]" " -type \"float2\" 0.16786772 0.28551864999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[22]" " -type \"float2\" 0.16580093000000001 0.28337871999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[23]" " -type \"float2\" 0.17537295999999999 0.27119425000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[24]" " -type \"float2\" 0.17742482000000001 0.27134806"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[25]" " -type \"float2\" 0.18029920999999999 0.27848740999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[26]" " -type \"float2\" 0.16534001000000001 0.25743898999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[27]" " -type \"float2\" 0.16531608 0.25851997999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[28]" " -type \"float2\" 0.16535111999999999 0.25743839000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[29]" " -type \"float2\" 0.16564867999999999 0.27144881999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[30]" " -type \"float2\" 0.16594687 0.26923208999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[31]" " -type \"float2\" 0.16615199 0.27044919000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[32]" " -type \"float2\" 0.19541871999999999 0.25741040999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[33]" " -type \"float2\" 0.19562750000000001 0.25526168999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[34]" " -type \"float2\" 0.19704014 0.25803085999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[35]" " -type \"float2\" 0.18534131000000001 0.26683333999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[36]" " -type \"float2\" 0.18741009 0.26455337000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[37]" " -type \"float2\" 0.18730915000000001 0.26686307999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[38]" " -type \"float2\" 0.19337228000000001 0.28330269000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[39]" " -type \"float2\" 0.19392902000000001 0.28571259999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[40]" " -type \"float2\" 0.18879983 0.28263625999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[41]" " -type \"float2\" 0.16976584 0.28964421000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[42]" " -type \"float2\" 0.16861661 0.28964201000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[43]" " -type \"float2\" 0.16757026 0.28968750999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[44]" " -type \"float2\" 0.17944821999999999 0.28943974"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[45]" " -type \"float2\" 0.18166602000000001 0.28976577999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[46]" " -type \"float2\" 0.17943808 0.28972091999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[47]" " -type \"float2\" 0.19891109000000001 0.28989142000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[48]" " -type \"float2\" 0.19675772 0.28987279999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[49]" " -type \"float2\" 0.19781837999999999 0.28986222"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[50]" " -type \"float2\" 0.19246635000000001 0.28989628000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[51]" " -type \"float2\" 0.19457914000000001 0.28990086999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[52]" " -type \"float2\" 0.19352080999999999 0.28986612"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[53]" " -type \"float2\" 0.16522703999999999 0.26278268999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[54]" " -type \"float2\" 0.16522092999999999 0.26067960000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[55]" " -type \"float2\" 0.16525359000000001 0.26174992000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[56]" " -type \"float2\" 0.18937993 0.27357012000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[57]" " -type \"float2\" 0.19025872999999999 0.27015846999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[58]" " -type \"float2\" 0.19273978 0.27791961999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[59]" " -type \"float2\" 0.17086665000000001 0.28902206000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[60]" " -type \"float2\" 0.17213687 0.28359320999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[61]" " -type \"float2\" 0.17422006000000001 0.28747549999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[62]" " -type \"float2\" 0.16550553000000001 0.27793350999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[63]" " -type \"float2\" 0.16975162999999999 0.27897674"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[64]" " -type \"float2\" 0.19908038 0.27808948999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[65]" " -type \"float2\" 0.19909298 0.28035264999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[66]" " -type \"float2\" 0.19897392 0.27922954999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[67]" " -type \"float2\" 0.16589931999999999 0.26615148999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[68]" " -type \"float2\" 0.16597819 0.26708660000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[69]" " -type \"float2\" 0.16555990000000001 0.26494610000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[70]" " -type \"float2\" 0.16529184999999999 0.26385573000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[71]" " -type \"float2\" 0.16578671 0.28446251"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[72]" " -type \"float2\" 0.16548172 0.28875181"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[73]" " -type \"float2\" 0.16545251 0.28983364"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[74]" " -type \"float2\" 0.16529091000000001 0.26290330000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[75]" " -type \"float2\" 0.16817382 0.25951964"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[76]" " -type \"float2\" 0.17096929 0.26589805"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[77]" " -type \"float2\" 0.17473710000000001 0.25546622000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[78]" " -type \"float2\" 0.17987507999999999 0.25711857999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[79]" " -type \"float2\" 0.17435581999999999 0.25738892000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[80]" " -type \"float2\" 0.18734634999999999 0.25693308999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[81]" " -type \"float2\" 0.19450897 0.25526368999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[82]" " -type \"float2\" 0.19674701999999999 0.28341117999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[83]" " -type \"float2\" 0.19955464000000001 0.28459846999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[84]" " -type \"float2\" 0.17304001999999999 0.28924292000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[85]" " -type \"float2\" 0.17193480999999999 0.28922123"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[86]" " -type \"float2\" 0.17414552999999999 0.28926828999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[87]" " -type \"float2\" 0.17729449 0.28951353000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[88]" " -type \"float2\" 0.17522821 0.28898426999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[89]" " -type \"float2\" 0.17626845999999999 0.28903954999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[90]" " -type \"float2\" 0.17730921999999999 0.28921106000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[91]" " -type \"float2\" 0.19353801000000001 0.28984997000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[92]" " -type \"float2\" 0.17639114 0.28498076999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[93]" " -type \"float2\" 0.17545430000000001 0.2838811"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[94]" " -type \"float2\" 0.19244349999999999 0.28990223999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[95]" " -type \"float2\" 0.16578554000000001 0.27575949"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[96]" " -type \"float2\" 0.16583627000000001 0.27360563999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[97]" " -type \"float2\" 0.16576221999999999 0.27469181999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[98]" " -type \"float2\" 0.16901923999999999 0.2680611"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[99]" " -type \"float2\" 0.1753017 0.25937443999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[100]" " -type \"float2\" 0.18803445999999999 0.25908712"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[101]" " -type \"float2\" 0.18052283 0.28976228999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[102]" " -type \"float2\" 0.17623780999999999 0.28939837000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[103]" " -type \"float2\" 0.16558486 0.28228252999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[104]" " -type \"float2\" 0.16648893000000001 0.28980001999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[105]" " -type \"float2\" 0.16587815 0.28671186999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[106]" " -type \"float2\" 0.16564346999999999 0.27577143999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[107]" " -type \"float2\" 0.16955545999999999 0.27453854999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[108]" " -type \"float2\" 0.17128035 0.27111095000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[109]" " -type \"float2\" 0.17333340999999999 0.27108520000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[110]" " -type \"float2\" 0.17319335 0.27905497000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[111]" " -type \"float2\" 0.18247288 0.27968981999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[112]" " -type \"float2\" 0.17442837 0.28033856000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[113]" " -type \"float2\" 0.17633693 0.27819282000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[114]" " -type \"float2\" 0.19917995999999999 0.28346890000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[115]" " -type \"float2\" 0.19913587999999999 0.28246459000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[116]" " -type \"float2\" 0.19028059 0.28996283"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[117]" " -type \"float2\" 0.18711205 0.29002689999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[118]" " -type \"float2\" 0.19031708 0.28996706"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[119]" " -type \"float2\" 0.165472 0.28010499"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[120]" " -type \"float2\" 0.16548109 0.28009841000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[121]" " -type \"float2\" 0.16557912999999999 0.27792256999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[122]" " -type \"float2\" 0.16774742000000001 0.25808743000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[123]" " -type \"float2\" 0.16955509999999999 0.25529238999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[124]" " -type \"float2\" 0.16916207999999999 0.25755625999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[125]" " -type \"float2\" 0.17094398 0.25882429000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[126]" " -type \"float2\" 0.17109714000000001 0.26182428000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[127]" " -type \"float2\" 0.18048054999999999 0.27272313999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[128]" " -type \"float2\" 0.18046535999999999 0.27029255000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[129]" " -type \"float2\" 0.17932703 0.26655068999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[130]" " -type \"float2\" 0.19457748999999999 0.26172751"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[131]" " -type \"float2\" 0.19416833999999999 0.26466230000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[132]" " -type \"float2\" 0.18626683999999999 0.27033334999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[133]" " -type \"float2\" 0.18239871999999999 0.27275121000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[134]" " -type \"float2\" 0.19998239000000001 0.28881082000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[135]" " -type \"float2\" 0.19890715 0.28988791000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[136]" " -type \"float2\" 0.19993061000000001 0.28774886999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[137]" " -type \"float2\" 0.19119291999999999 0.28571138000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[138]" " -type \"float2\" 0.18727133000000001 0.28787678"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[139]" " -type \"float2\" 0.18164663 0.28863865"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[140]" " -type \"float2\" 0.18481942000000001 0.28183374"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[141]" " -type \"float2\" 0.16648805 0.28983619999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[142]" " -type \"float2\" 0.16648935000000001 0.28987277"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[143]" " -type \"float2\" 0.1720112 0.28889456000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[144]" " -type \"float2\" 0.17310710000000001 0.28890187000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[145]" " -type \"float2\" 0.18054970000000001 0.28951158999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[146]" " -type \"float2\" 0.19675079000000001 0.28988030999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[147]" " -type \"float2\" 0.19569226000000001 0.28982159000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[148]" " -type \"float2\" 0.197137 0.28714165000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[149]" " -type \"float2\" 0.16750142000000001 0.25527548999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[150]" " -type \"float2\" 0.19226412000000001 0.25531619999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[151]" " -type \"float2\" 0.18889744999999999 0.25551732999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[152]" " -type \"float2\" 0.18348046000000001 0.25569176999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[153]" " -type \"float2\" 0.18454488999999999 0.25570312000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[154]" " -type \"float2\" 0.18133816 0.25561988000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[155]" " -type \"float2\" 0.17692049000000001 0.25552808999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[156]" " -type \"float2\" 0.17914960999999999 0.25556266"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[157]" " -type \"float2\" 0.17367369999999999 0.25542018"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[158]" " -type \"float2\" 0.16564325999999999 0.28126633000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[159]" " -type \"float2\" 0.19898333000000001 0.28031381999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[160]" " -type \"float2\" 0.19896053999999999 0.28139441999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[161]" " -type \"float2\" 0.16610237999999999 0.26803424999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[162]" " -type \"float2\" 0.19941443 0.27359211"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[163]" " -type \"float2\" 0.19935335000000001 0.27469173000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[164]" " -type \"float2\" 0.16556800999999999 0.26388907"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[165]" " -type \"float2\" 0.16557332999999999 0.27684984000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[166]" " -type \"float2\" 0.16525722000000001 0.25960496"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[167]" " -type \"float2\" 0.19983231000000001 0.26281017000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[168]" " -type \"float2\" 0.19759001000000001 0.25955920999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[169]" " -type \"float2\" 0.19986129999999999 0.26173729000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[170]" " -type \"float2\" 0.19953439000000001 0.27142894000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[171]" " -type \"float2\" 0.19966139999999999 0.26927762999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[172]" " -type \"float2\" 0.17262896999999999 0.25537395000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[173]" " -type \"float2\" 0.19460528999999999 0.28985703000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[174]" " -type \"float2\" 0.19976471000000001 0.26711394999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[175]" " -type \"float2\" 0.19662961000000001 0.26801512"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[176]" " -type \"float2\" 0.19979142999999999 0.26603590999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[177]" " -type \"float2\" 0.16587864999999999 0.28551999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[178]" " -type \"float2\" 0.18278243999999999 0.28976917000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[179]" " -type \"float2\" 0.18388449000000001 0.28988877000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[180]" " -type \"float2\" 0.18166740000000001 0.2896859"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[181]" " -type \"float2\" 0.19131623 0.25938252000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[182]" " -type \"float2\" 0.17836573999999999 0.28926765999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[183]" " -type \"float2\" 0.18604436999999999 0.29000226000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[184]" " -type \"float2\" 0.19990274 0.26066383999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[185]" " -type \"float2\" 0.19139226000000001 0.28991538"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[186]" " -type \"float2\" 0.19962229000000001 0.28566756999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[187]" " -type \"float2\" 0.19979653999999999 0.28669840000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[188]" " -type \"float2\" 0.16566128999999999 0.2877171"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[189]" " -type \"float2\" 0.19231421000000001 0.26048735000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[190]" " -type \"float2\" 0.19783155999999999 0.25526503"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[191]" " -type \"float2\" 0.18722992999999999 0.27940172000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[192]" " -type \"float2\" 0.18431797999999999 0.27270967000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[193]" " -type \"float2\" 0.18233149000000001 0.26546069999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[194]" " -type \"float2\" 0.19999035000000001 0.25742933000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[195]" " -type \"float2\" 0.19999757000000001 0.25526505999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[196]" " -type \"float2\" 0.23440172000000001 0.25891375999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[197]" " -type \"float2\" 0.23209767000000001 0.26078066"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[198]" " -type \"float2\" 0.23000319 0.25978982"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[199]" " -type \"float2\" 0.23533056999999999 0.25991588999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[200]" " -type \"float2\" 0.22886665 0.26199963999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[201]" " -type \"float2\" 0.23055966 0.25721511000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[202]" " -type \"float2\" 0.23316117 0.26193645999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[203]" " -type \"float2\" 0.23937272000000001 0.25743890000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[204]" " -type \"float2\" 0.22592035999999999 0.26108012000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[205]" " -type \"float2\" 0.22764303 0.26942226000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[206]" " -type \"float2\" 0.22639401000000001 0.25817068999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[207]" " -type \"float2\" 0.23746358000000001 0.25739619000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[208]" " -type \"float2\" 0.23623841000000001 0.26214813999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[209]" " -type \"float2\" 0.23131773999999999 0.27189576999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[210]" " -type \"float2\" 0.24023221 0.25950050000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[211]" " -type \"float2\" 0.22610611999999999 0.26452360000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[212]" " -type \"float2\" 0.22507737999999999 0.26010248000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[213]" " -type \"float2\" 0.22969906000000001 0.25566264999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[214]" " -type \"float2\" 0.23567499 0.25567933999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[215]" " -type \"float2\" 0.23427291 0.27059048000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[216]" " -type \"float2\" 0.24111996999999999 0.25840920000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[217]" " -type \"float2\" 0.22149162 0.26364797000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[218]" " -type \"float2\" 0.2198533 0.25844738"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[219]" " -type \"float2\" 0.22582880999999999 0.26946446000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[220]" " -type \"float2\" 0.22293431999999999 0.25640854000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[221]" " -type \"float2\" 0.23998708999999999 0.26482132000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[222]" " -type \"float2\" 0.23530192999999999 0.27182737000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[223]" " -type \"float2\" 0.23335035000000001 0.27429726999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[224]" " -type \"float2\" 0.24028844999999999 0.25438154000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[225]" " -type \"float2\" 0.24230154000000001 0.25969555999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[226]" " -type \"float2\" 0.22361864000000001 0.26708499000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[227]" " -type \"float2\" 0.22801746000000001 0.27430841"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[228]" " -type \"float2\" 0.22371716999999999 0.25459459000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[229]" " -type \"float2\" 0.23360299000000001 0.25449827000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[230]" " -type \"float2\" 0.23057018000000001 0.27430606000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[231]" " -type \"float2\" 0.23842235000000001 0.25431889000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[232]" " -type \"float2\" 0.24416877000000001 0.25759903000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[233]" " -type \"float2\" 0.24175865999999999 0.25707975"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[234]" " -type \"float2\" 0.21717246000000001 0.26085120000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[235]" " -type \"float2\" 0.22094200999999999 0.26724374000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[236]" " -type \"float2\" 0.21964367000000001 0.25437283999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[237]" " -type \"float2\" 0.22533591 0.27314663"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[238]" " -type \"float2\" 0.22667782 0.25473775999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[239]" " -type \"float2\" 0.23158897000000001 0.25464255000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[240]" " -type \"float2\" 0.23459632999999999 0.25442906999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[241]" " -type \"float2\" 0.23534225 0.27425325"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[242]" " -type \"float2\" 0.24063261 0.26834729000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[243]" " -type \"float2\" 0.23254769 0.27665684000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[244]" " -type \"float2\" 0.23748393000000001 0.25431432999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[245]" " -type \"float2\" 0.24421622000000001 0.25982419000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[246]" " -type \"float2\" 0.24216507000000001 0.25445880999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[247]" " -type \"float2\" 0.21585307000000001 0.25861505000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[248]" " -type \"float2\" 0.22212993 0.26958146999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[249]" " -type \"float2\" 0.21674146999999999 0.25646538000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[250]" " -type \"float2\" 0.2292024 0.27785352000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[251]" " -type \"float2\" 0.22569273000000001 0.27669748999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[252]" " -type \"float2\" 0.22862203 0.25475230999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[253]" " -type \"float2\" 0.23058967 0.25469613000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[254]" " -type \"float2\" 0.23557444 0.25437209"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[255]" " -type \"float2\" 0.23980169000000001 0.27419662"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[256]" " -type \"float2\" 0.24307765000000001 0.26767752"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[257]" " -type \"float2\" 0.23098724000000001 0.28018510000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[258]" " -type \"float2\" 0.23653625 0.25433272000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[259]" " -type \"float2\" 0.24413686000000001 0.25647896999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[260]" " -type \"float2\" 0.24415843000000001 0.26088586000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[261]" " -type \"float2\" 0.21919183 0.26735121000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[262]" " -type \"float2\" 0.21619183 0.26522708"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[263]" " -type \"float2\" 0.21761309000000001 0.25432321000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[264]" " -type \"float2\" 0.22193647999999999 0.27899814000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[265]" " -type \"float2\" 0.21974547 0.27896725999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[266]" " -type \"float2\" 0.22960175999999999 0.25473132999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[267]" " -type \"float2\" 0.24108325 0.28108834999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[268]" " -type \"float2\" 0.24344604 0.26525849000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[269]" " -type \"float2\" 0.24311192000000001 0.26866709999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[270]" " -type \"float2\" 0.24256179999999999 0.27428105000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[271]" " -type \"float2\" 0.23447688 0.27895611999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[272]" " -type \"float2\" 0.24424978 0.26201343999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[273]" " -type \"float2\" 0.24381377000000001 0.26317542999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[274]" " -type \"float2\" 0.24408336 0.25450739"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[275]" " -type \"float2\" 0.21529682999999999 0.25708630999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[276]" " -type \"float2\" 0.21271245 0.25869477000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[277]" " -type \"float2\" 0.22582770999999999 0.27902304999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[278]" " -type \"float2\" 0.22760216999999999 0.28018922000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[279]" " -type \"float2\" 0.24008103 0.28220658999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[280]" " -type \"float2\" 0.24336885 0.26657256000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[281]" " -type \"float2\" 0.24369547999999999 0.26417246"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[282]" " -type \"float2\" 0.24306937000000001 0.26966753999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[283]" " -type \"float2\" 0.24318506000000001 0.27205199000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[284]" " -type \"float2\" 0.23932146000000001 0.28337203999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[285]" " -type \"float2\" 0.24415434999999999 0.26201396999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[286]" " -type \"float2\" 0.21741308000000001 0.272021"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[287]" " -type \"float2\" 0.21282693999999999 0.26092458000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[288]" " -type \"float2\" 0.21459807 0.25429705000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[289]" " -type \"float2\" 0.22750572999999999 0.28250414000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[290]" " -type \"float2\" 0.22275178000000001 0.28243931999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[291]" " -type \"float2\" 0.21730463 0.28230366000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[292]" " -type \"float2\" 0.24392943 0.27769205000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[293]" " -type \"float2\" 0.24419080000000001 0.26312458999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[294]" " -type \"float2\" 0.24386619000000001 0.27098792999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[295]" " -type \"float2\" 0.24338536 0.27096963000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[296]" " -type \"float2\" 0.24356182000000001 0.27319728999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[297]" " -type \"float2\" 0.23359342 0.28368735"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[298]" " -type \"float2\" 0.21283214 0.27098292000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[299]" " -type \"float2\" 0.21263377 0.25645801000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[300]" " -type \"float2\" 0.21290305000000001 0.26314159999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[301]" " -type \"float2\" 0.21929446999999999 0.28454369000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[302]" " -type \"float2\" 0.24401862999999999 0.27994528000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[303]" " -type \"float2\" 0.24374174000000001 0.27545198999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[304]" " -type \"float2\" 0.24355333000000001 0.27432379000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[305]" " -type \"float2\" 0.23813559000000001 0.28458076999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[306]" " -type \"float2\" 0.21282809999999999 0.27210653000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[307]" " -type \"float2\" 0.21286311999999999 0.26873883999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[308]" " -type \"float2\" 0.21289888000000001 0.26537200999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[309]" " -type \"float2\" 0.21502565000000001 0.27787476999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[310]" " -type \"float2\" 0.21261795999999999 0.25426220999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[311]" " -type \"float2\" 0.22349859999999999 0.28470275"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[312]" " -type \"float2\" 0.23088975 0.28487244"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[313]" " -type \"float2\" 0.21485346999999999 0.28566965"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[314]" " -type \"float2\" 0.2439421 0.28107705999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[315]" " -type \"float2\" 0.23720712999999999 0.28698741999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[316]" " -type \"float2\" 0.24107723 0.28558728"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[317]" " -type \"float2\" 0.21284963000000001 0.27323583000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[318]" " -type \"float2\" 0.21620898999999999 0.28127976999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[319]" " -type \"float2\" 0.22311450999999999 0.28690594000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[320]" " -type \"float2\" 0.21523619999999999 0.28723072999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[321]" " -type \"float2\" 0.24392425000000001 0.28220709999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[322]" " -type \"float2\" 0.24020796 0.28950696999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[323]" " -type \"float2\" 0.21321353000000001 0.28132752"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[324]" " -type \"float2\" 0.21290091 0.27437401"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[325]" " -type \"float2\" 0.22888190999999999 0.28711858000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[326]" " -type \"float2\" 0.23152189000000001 0.28829022999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[327]" " -type \"float2\" 0.21665814999999999 0.28782341"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[328]" " -type \"float2\" 0.21297899000000001 0.28463843"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[329]" " -type \"float2\" 0.21294478999999999 0.28572871999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[330]" " -type \"float2\" 0.23914661000000001 0.28949090999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[331]" " -type \"float2\" 0.24163945000000001 0.28728279000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[332]" " -type \"float2\" 0.21315276999999999 0.28244236"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[333]" " -type \"float2\" 0.21319808000000001 0.27907091000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[334]" " -type \"float2\" 0.21305980999999999 0.27670445999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[335]" " -type \"float2\" 0.23716639 0.28884538999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[336]" " -type \"float2\" 0.22440101000000001 0.29023889000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[337]" " -type \"float2\" 0.21318287 0.2834951"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[338]" " -type \"float2\" 0.21654786000000001 0.29003751"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[339]" " -type \"float2\" 0.21284074 0.28678930000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[340]" " -type \"float2\" 0.2437986 0.28336804999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[341]" " -type \"float2\" 0.24375827999999999 0.28662210999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[342]" " -type \"float2\" 0.2411664 0.28982845000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[343]" " -type \"float2\" 0.22933058000000001 0.29006332000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[344]" " -type \"float2\" 0.23423378 0.28957613999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[345]" " -type \"float2\" 0.22733532000000001 0.29019114000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[346]" " -type \"float2\" 0.22145978999999999 0.29016066000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[347]" " -type \"float2\" 0.21753494000000001 0.29006483999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[348]" " -type \"float2\" 0.21557414999999999 0.29007521000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[349]" " -type \"float2\" 0.21275923999999999 0.28787675000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[350]" " -type \"float2\" 0.24419294 0.285602"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[351]" " -type \"float2\" 0.24378971999999999 0.28445559999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[352]" " -type \"float2\" 0.23814801999999999 0.28939271"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[353]" " -type \"float2\" 0.24369286000000001 0.28542288999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[354]" " -type \"float2\" 0.24310262999999999 0.29002956000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[355]" " -type \"float2\" 0.24211819000000001 0.28987557000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[356]" " -type \"float2\" 0.23033591 0.28995299000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[357]" " -type \"float2\" 0.23518784000000001 0.28952840000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[358]" " -type \"float2\" 0.2332726 0.28969538"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[359]" " -type \"float2\" 0.21949226999999999 0.29009794999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[360]" " -type \"float2\" 0.21851230999999999 0.29006054999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[361]" " -type \"float2\" 0.21273080999999999 0.28898129"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[362]" " -type \"float2\" 0.23714263999999999 0.28941515000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[363]" " -type \"float2\" 0.24395460999999999 0.28795113999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[364]" " -type \"float2\" 0.23132832 0.28988083999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[365]" " -type \"float2\" 0.23615274999999999 0.28941720999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[366]" " -type \"float2\" 0.23231009999999999 0.28976290999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[367]" " -type \"float2\" 0.21360900999999999 0.29008675"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[368]" " -type \"float2\" 0.24405447999999999 0.28672734"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[369]" " -type \"float2\" 0.24404181999999999 0.28901964000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[370]" " -type \"float2\" 0.21270669 0.29010391000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[371]" " -type \"float2\" 0.24405439000000001 0.29006773000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[372]" " -type \"float2\" 0.21461189999999999 0.25376876999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[373]" " -type \"float2\" 0.21661520000000001 0.25378916000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[374]" " -type \"float2\" 0.21264361000000001 0.25371920999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[375]" " -type \"float2\" 0.21763207000000001 0.25378516000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[376]" " -type \"float2\" 0.21967296 0.25377232"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[377]" " -type \"float2\" 0.22273333000000001 0.25378475"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[378]" " -type \"float2\" 0.22473747999999999 0.25383802999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[379]" " -type \"float2\" 0.22668777000000001 0.2539286"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[380]" " -type \"float2\" 0.22765462 0.25398063999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[381]" " -type \"float2\" 0.23059006000000001 0.25397976999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[382]" " -type \"float2\" 0.23159276000000001 0.25390857"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[383]" " -type \"float2\" 0.23362247999999999 0.25369512999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[384]" " -type \"float2\" 0.2346241 0.25361156000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[385]" " -type \"float2\" 0.23560928 0.25356763999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[386]" " -type \"float2\" 0.23657597999999999 0.25356867999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[387]" " -type \"float2\" 0.23752506000000001 0.25361031000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[388]" " -type \"float2\" 0.24031506 0.25388807000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[389]" " -type \"float2\" 0.24217907999999999 0.25407576999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[390]" " -type \"float2\" 0.24408726 0.25423046999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[391]" " -type \"float2\" 0.18336108000000001 0.26214876999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[392]" " -type \"float2\" 0.17720643 0.26438363999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[393]" " -type \"float2\" 0.17920537 0.26215664"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[394]" " -type \"float2\" 0.18403937000000001 0.28594309000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[395]" " -type \"float2\" 0.17521627000000001 0.26144344000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[396]" " -type \"float2\" 0.17519145999999999 0.26562430999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[397]" " -type \"float2\" 0.19325972999999999 0.27105098999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[398]" " -type \"float2\" 0.17574256999999999 0.27468409999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[399]" " -type \"float2\" 0.17582014000000001 0.25550297"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[400]" " -type \"float2\" 0.18025140000000001 0.25558817"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[401]" " -type \"float2\" 0.18669189999999999 0.25563534999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[402]" " -type \"float2\" 0.17417732 0.28887247999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[403]" " -type \"float2\" 0.16966844 0.28912270000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[404]" " -type \"float2\" 0.19496084999999999 0.26790111999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[405]" " -type \"float2\" 0.16601023000000001 0.27251562000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[406]" " -type \"float2\" 0.16605761999999999 0.27144857999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[407]" " -type \"float2\" 0.16540223000000001 0.25526758999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[408]" " -type \"float2\" 0.19991407 0.28667938999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[409]" " -type \"float2\" 0.16556522000000001 0.28119132000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[410]" " -type \"float2\" 0.16619544999999999 0.26718518000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[411]" " -type \"float2\" 0.16539963999999999 0.25526624999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[412]" " -type \"float2\" 0.16526388 0.26066866999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[413]" " -type \"float2\" 0.1783632 0.27838066"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[414]" " -type \"float2\" 0.19981097 0.26388352999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[415]" " -type \"float2\" 0.19999453 0.28989255000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[416]" " -type \"float2\" 0.19917133000000001 0.27694606999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[417]" " -type \"float2\" 0.19947598999999999 0.27250608999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[418]" " -type \"float2\" 0.16544180999999999 0.28987309"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[419]" " -type \"float2\" 0.19999515000000001 0.28989526999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[420]" " -type \"float2\" 0.19568036 0.28984388999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[421]" " -type \"float2\" 0.19459525999999999 0.28987025999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[422]" " -type \"float2\" 0.17083704 0.28931605999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[423]" " -type \"float2\" 0.21224040999999999 0.28789633999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[424]" " -type \"float2\" 0.21229683999999999 0.28678643999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[425]" " -type \"float2\" 0.21223944 0.28899788999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[426]" " -type \"float2\" 0.21227819000000001 0.28462818000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[427]" " -type \"float2\" 0.21227472999999999 0.29011958999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[428]" " -type \"float2\" 0.21246271999999999 0.28022221000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[429]" " -type \"float2\" 0.21242583000000001 0.27787513000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[430]" " -type \"float2\" 0.21237191999999999 0.27668965000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[431]" " -type \"float2\" 0.21222357 0.27435279000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[432]" " -type \"float2\" 0.21214809000000001 0.27321297"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[433]" " -type \"float2\" 0.21250616 0.27097677999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[434]" " -type \"float2\" 0.21213478999999999 0.27208659000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[435]" " -type \"float2\" 0.21216598 0.270969"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[436]" " -type \"float2\" 0.21227524 0.26873638999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[437]" " -type \"float2\" 0.21233579999999999 0.26649147000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[438]" " -type \"float2\" 0.21234465999999999 0.26537316999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[439]" " -type \"float2\" 0.21232986000000001 0.26314068000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[440]" " -type \"float2\" 0.21227382 0.26202792000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[441]" " -type \"float2\" 0.21224554000000001 0.26091536999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[442]" " -type \"float2\" 0.21217453 0.25980260999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[443]" " -type \"float2\" 0.21203651000000001 0.25644897999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[444]" " -type \"float2\" 0.21198918 0.25420457000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[445]" " -type \"float2\" 0.18382148000000001 0.28999220999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[446]" " -type \"float2\" 0.18704724 0.29003835"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[447]" " -type \"float2\" 0.17835255999999999 0.28957871000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[448]" " -type \"float2\" 0.17943182999999999 0.28969257999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[449]" " -type \"float2\" 0.18162803 0.28986883000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[450]" " -type \"float2\" 0.17412828 0.28924485999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[451]" " -type \"float2\" 0.17518898999999999 0.28935227000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[452]" " -type \"float2\" 0.16967028000000001 0.28933155999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "uvSet[0].uvSetPoints[453]" " -type \"float2\" 0.22960154999999999 0.25401794999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts" " -s 371"
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[0]" " -type \"float3\" 8.76231379999999938 0.47530719999999999 -1.25809909999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[1]" " -type \"float3\" 9.00432780000000044 -0.68483746000000001 -1.36043610000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[2]" " -type \"float3\" 8.00570869999999957 0.47088112999999998 -0.15030889"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[3]" " -type \"float3\" 8.28878970000000059 -0.68280326999999996 -0.2290539"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[4]" " -type \"float3\" 8.89429570000000069 -0.095263212999999999 -1.25686239999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[5]" " -type \"float3\" 8.85243029999999997 -0.1075709 -1.30205229999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[6]" " -type \"float3\" 8.62386230000000076 -0.68515479999999995 -0.80597353000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[7]" " -type \"float3\" 8.41172889999999995 0.45963528999999997 -0.70381391000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[8]" " -type \"float3\" 8.96677210000000002 -0.38918631999999997 -1.3142507000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[9]" " -type \"float3\" 8.93393419999999949 -0.39862001000000002 -1.33241459999999989"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[10]" " -type \"float3\" 8.22614379999999912 -0.36573466999999998 -0.23909501999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[11]" " -type \"float3\" 8.23018650000000029 -0.40203043999999999 -0.25046012000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[12]" " -type \"float3\" 8.15068240000000088 -0.066850215000000004 -0.19538539999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[13]" " -type \"float3\" 8.45053670000000068 -0.682805 -0.47311505999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[14]" " -type \"float3\" 8.5712767000000003 0.46500126000000003 -0.99981606000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[15]" " -type \"float3\" 8.78067970000000031 0.17749350999999999 -1.30366479999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[16]" " -type \"float3\" 8.54796409999999973 0.46157596000000001 -1.01598530000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[17]" " -type \"float3\" 8.10957430000000024 0.19014701000000001 -0.15800889000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[18]" " -type \"float3\" 8.1926211999999996 0.47340342000000002 -0.38621222999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[19]" " -type \"float3\" 8.84817220000000049 -0.65798098000000005 -1.05650780000000011"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[20]" " -type \"float3\" 8.1685648000000004 0.46872696000000003 -0.40237667999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[21]" " -type \"float3\" 8.36132530000000074 0.45683590000000002 -0.68604577"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[22]" " -type \"float3\" 8.94419670000000089 -0.39227616999999998 -1.33483449999999992"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[23]" " -type \"float3\" 8.45891570000000037 -0.59219860999999996 -0.93307704000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[24]" " -type \"float3\" 8.71503730000000054 -0.66815864999999997 -0.94711034999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[25]" " -type \"float3\" 8.66586210000000001 0.47282055000000001 -1.12788559999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[26]" " -type \"float3\" 8.81979270000000071 0.18591514000000001 -1.2909056000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[27]" " -type \"float3\" 8.63181969999999943 0.014612556000000001 -1.27201140000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[28]" " -type \"float3\" 8.6149053999999996 0.23145393 -1.2745727"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[29]" " -type \"float3\" 8.19620420000000038 -0.25234157000000002 -0.22909597000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[30]" " -type \"float3\" 8.12600989999999967 0.0037617087000000001 -0.19391987999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[31]" " -type \"float3\" 8.21280289999999979 -0.24828710000000001 -0.20670237999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[32]" " -type \"float3\" 8.25919150000000002 -0.43287661999999999 -0.22234288999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[33]" " -type \"float3\" 8.14597509999999936 0.0084143281 -0.17674117"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[34]" " -type \"float3\" 8.4859524000000004 0.45932707 -0.90702695"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[35]" " -type \"float3\" 8.75391289999999955 -0.67065691999999999 -0.92497050999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[36]" " -type \"float3\" 8.81659510000000068 -0.66560947999999998 -1.07627110000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[37]" " -type \"float3\" 8.99219420000000014 -0.53026169999999995 -1.31806979999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[38]" " -type \"float3\" 8.90954690000000049 -0.24925723999999999 -1.31805180000000011"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[39]" " -type \"float3\" 8.6878346999999998 -0.50383633000000005 -1.20923650000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[40]" " -type \"float3\" 8.95393559999999944 -0.54245566999999995 -1.34074739999999992"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[41]" " -type \"float3\" 8.24915410000000016 -0.57895589000000003 -0.23410738"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[42]" " -type \"float3\" 8.77006910000000062 0.32409706999999999 -1.2925196000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[43]" " -type \"float3\" 8.8257589000000003 0.0015601218000000001 -1.29741050000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[44]" " -type \"float3\" 8.35854239999999926 -0.68496776000000004 -0.38200044999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[45]" " -type \"float3\" 8.23517990000000033 -0.38543202999999998 -0.77343249000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[46]" " -type \"float3\" 8.81512069999999959 0.25855215999999998 -0.88344639999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[47]" " -type \"float3\" 8.93831160000000047 -0.56134963000000004 -1.03409149999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[48]" " -type \"float3\" 8.14464569999999988 0.47562680000000002 -0.3136428"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[49]" " -type \"float3\" 8.35525230000000008 -0.43761918 -1.00723230000000008"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[50]" " -type \"float3\" 8.43975539999999924 -0.50425428000000005 -1.06029079999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[51]" " -type \"float3\" 8.869133 -0.47253725000000002 -0.74290769999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[52]" " -type \"float3\" 8.44841959999999936 -0.68860573000000003 -0.52308427999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[53]" " -type \"float3\" 8.17485620000000068 -0.32100770000000001 -0.54696922999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[54]" " -type \"float3\" 8.18683429999999923 -0.17420609000000001 -0.19853108999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[55]" " -type \"float3\" 8.62322619999999951 0.036734431999999997 -0.34589511000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[56]" " -type \"float3\" 8.56531810000000071 0.33032342999999997 -0.46369088000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[57]" " -type \"float3\" 8.95860389999999995 -0.35300105999999998 -1.3151565999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[58]" " -type \"float3\" 8.9186286999999993 -0.20802467999999999 -1.29416909999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[59]" " -type \"float3\" 8.9397669000000004 -0.28028925999999998 -1.3063705000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[60]" " -type \"float3\" 8.84352490000000024 -0.65652204000000003 -1.154543"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[61]" " -type \"float3\" 8.72006889999999935 -0.34584715999999999 -1.26363789999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[62]" " -type \"float3\" 8.21816920000000017 -0.32860926000000001 -0.24125991999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[63]" " -type \"float3\" 8.17044929999999958 -0.17799363000000001 -0.22031043"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[64]" " -type \"float3\" 8.4281568999999994 -0.68142104000000003 -0.43758502999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[65]" " -type \"float3\" 8.23748679999999922 -0.32388182999999998 -0.21617573000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[66]" " -type \"float3\" 8.52998919999999927 0.46120276999999998 -0.92907125000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[67]" " -type \"float3\" 8.4965515000000007 -0.68492978999999998 -0.54366296999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[68]" " -type \"float3\" 8.80755519999999947 0.25928465000000001 -1.28084730000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[69]" " -type \"float3\" 8.78949929999999924 0.10155082 -1.2997593999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[70]" " -type \"float3\" 8.94096470000000032 -0.47049326000000002 -1.33654429999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[71]" " -type \"float3\" 8.98088650000000044 -0.61469781000000001 -1.3499597000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[72]" " -type \"float3\" 8.66204929999999962 0.30833659000000002 -1.27666719999999989"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[73]" " -type \"float3\" 8.52450280000000049 0.076168805000000006 -1.23499019999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[74]" " -type \"float3\" 8.47295480000000012 0.37928292000000002 -1.04779470000000008"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[75]" " -type \"float3\" 8.28689480000000067 0.19386712 -0.98013651000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[76]" " -type \"float3\" 8.12201980000000034 0.47083297000000002 -0.32845342"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[77]" " -type \"float3\" 8.06247429999999987 0.38672271000000003 -0.34111958999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[78]" " -type \"float3\" 8.22928710000000052 -0.48327881 -0.36839062"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[79]" " -type \"float3\" 8.237751 -0.47217082999999999 -0.25110929999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[80]" " -type \"float3\" 8.24416539999999998 -0.54588603999999996 -0.24315365999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[81]" " -type \"float3\" 8.47184559999999998 -0.69029843999999996 -0.55796003000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[82]" " -type \"float3\" 8.06533909999999921 0.25609907999999998 -0.16695338000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[83]" " -type \"float3\" 8.0851974000000002 0.18487164 -0.17265438999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[84]" " -type \"float3\" 8.05402370000000012 0.29149892999999999 -0.16424358"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[85]" " -type \"float3\" 8.02700609999999948 0.47545817000000001 -0.1366059"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[86]" " -type \"float3\" 8.12527470000000029 0.11812314 -0.16329626999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[87]" " -type \"float3\" 8.25444889999999987 -0.39665603999999999 -0.22219481999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[88]" " -type \"float3\" 8.26697539999999975 -0.46688285000000002 -0.22346674"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[89]" " -type \"float3\" 8.31234259999999914 0.14678823999999999 -0.21365802"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[90]" " -type \"float3\" 8.08899309999999971 0.26099536000000001 -0.15272471000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[91]" " -type \"float3\" 8.06605150000000037 0.33196833999999997 -0.14688818000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[92]" " -type \"float3\" 8.3170737999999993 0.29112180999999998 -0.22845182"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[93]" " -type \"float3\" 8.29192349999999934 0.46277675000000001 -0.53130381999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[94]" " -type \"float3\" 8.61196990000000007 0.30306604999999998 -0.48345791999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[95]" " -type \"float3\" 8.700696 0.27622732999999999 -0.58232468000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[96]" " -type \"float3\" 8.80769540000000006 0.30912706000000001 -1.17789720000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[97]" " -type \"float3\" 8.840169 0.12183863 -1.25552829999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[98]" " -type \"float3\" 8.93819139999999912 -0.037866681999999999 -0.82704412999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[99]" " -type \"float3\" 8.98105050000000027 -0.46195149000000002 -1.31460770000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[100]" " -type \"float3\" 8.99830629999999942 -0.52055132000000004 -1.18145509999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[101]" " -type \"float3\" 8.88929650000000038 -0.63480228000000005 -1.07720689999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[102]" " -type \"float3\" 8.80114080000000065 -0.66383839 -0.99069381000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[103]" " -type \"float3\" 8.07396220000000042 0.47564795999999998 -0.20626417"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[104]" " -type \"float3\" 8.57079509999999978 0.46333089 -1.04909980000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[105]" " -type \"float3\" 8.742403 0.47099974999999999 -1.27105929999999989"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[106]" " -type \"float3\" 8.54997539999999923 0.46267619999999998 -0.96532446000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[107]" " -type \"float3\" 8.50558949999999925 0.45938649999999998 -0.94493168999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[108]" " -type \"float3\" 8.89390560000000008 -0.65735244999999998 -1.1280097"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[109]" " -type \"float3\" 9.02469540000000059 -0.68182885999999998 -1.34807990000000011"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[110]" " -type \"float3\" 8.75829120000000039 -0.66044879000000001 -1.01423259999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[111]" " -type \"float3\" 8.4027232999999999 -0.68632185000000001 -0.45308696999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[112]" " -type \"float3\" 8.53910059999999937 -0.69259965000000001 -0.66287165999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[113]" " -type \"float3\" 8.60046389999999938 -0.65584993000000003 -0.86494994000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[114]" " -type \"float3\" 8.66813089999999953 -0.67681800999999997 -0.87846672999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[115]" " -type \"float3\" 8.2702340999999997 -0.68675768000000004 -0.24103954"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[116]" " -type \"float3\" 8.63358969999999992 -0.68604094000000004 -0.75343663000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[117]" " -type \"float3\" 8.693265 0.4697096 -1.20587829999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[118]" " -type \"float3\" 8.90071679999999965 -0.13460056000000001 -1.28017449999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[119]" " -type \"float3\" 8.87668230000000058 -0.017702698999999999 -1.24498580000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[120]" " -type \"float3\" 8.7814779000000005 0.25128676999999999 -1.30151090000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[121]" " -type \"float3\" 8.88373570000000079 -0.1782704 -1.30971"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[122]" " -type \"float3\" 8.8256054000000006 -0.040237456999999997 -1.29723159999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[123]" " -type \"float3\" 8.37642289999999967 0.39332429000000002 -0.85341626000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[124]" " -type \"float3\" 8.33743950000000034 0.45616654000000001 -0.65243846000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[125]" " -type \"float3\" 8.12247559999999957 0.11195511 -0.72580719000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[126]" " -type \"float3\" 8.1732206000000005 -0.18270302999999999 -0.36028713000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[127]" " -type \"float3\" 8.14860250000000086 -0.10547951 -0.21225722"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[128]" " -type \"float3\" 8.45441439999999922 0.46107264999999997 -0.77560848000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[129]" " -type \"float3\" 8.592598 0.40616634000000001 -0.70310693999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[130]" " -type \"float3\" 8.77215389999999928 0.32946476000000002 -0.84886742000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[131]" " -type \"float3\" 8.77750490000000028 0.27321801000000001 -0.75010454999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[132]" " -type \"float3\" 8.9098272000000005 -0.17074832000000001 -1.28207249999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[133]" " -type \"float3\" 8.36538509999999924 0.45838584999999998 -0.63528985000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[134]" " -type \"float3\" 8.42753030000000081 0.45993075 -0.79151165000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[135]" " -type \"float3\" 8.70560739999999988 -0.67756640999999995 -0.85740607999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[136]" " -type \"float3\" 8.60347269999999931 -0.68868613000000001 -0.76919090999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[137]" " -type \"float3\" 9.00737950000000076 -0.61336267 -1.33877029999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[138]" " -type \"float3\" 8.97766780000000075 -0.54051351999999997 -1.34732739999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[139]" " -type \"float3\" 8.27292440000000084 -0.17411545 -1.01006879999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[140]" " -type \"float3\" 8.25462440000000086 -0.61522167999999999 -0.23788661999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[141]" " -type \"float3\" 8.35974219999999946 -0.68185430999999996 -0.33282771999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[142]" " -type \"float3\" 8.415226 -0.067253530000000006 -0.25870170999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[143]" " -type \"float3\" 8.78940109999999919 -0.18636175999999999 -0.4711957"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[144]" " -type \"float3\" 8.81405540000000087 0.22202209000000001 -1.2895011999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[145]" " -type \"float3\" 8.86826040000000049 -0.068353682999999998 -1.3004621999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[146]" " -type \"float3\" 8.5992841999999996 0.37686667000000001 -1.20713840000000006"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[147]" " -type \"float3\" 8.1109056000000006 -0.091474414000000004 -0.51242197"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[148]" " -type \"float3\" 8.15178009999999986 0.028728186999999999 -0.81954837000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[149]" " -type \"float3\" 8.31512359999999973 -0.68599814000000003 -0.31223756000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[150]" " -type \"float3\" 8.26394179999999956 -0.48539694999999999 -0.70684504999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[151]" " -type \"float3\" 8.52738189999999996 0.2201775 -0.33214550999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[152]" " -type \"float3\" 8.74807449999999953 0.049065560000000001 -0.45206034"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[153]" " -type \"float3\" 8.65091989999999988 0.11978969 -0.38533383999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[154]" " -type \"float3\" 8.88949679999999987 0.042265654 -1.103495"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[155]" " -type \"float3\" 8.97898479999999921 -0.67541063000000001 -1.27798089999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[156]" " -type \"float3\" 8.61709980000000009 0.46980545000000001 -1.06501920000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[157]" " -type \"float3\" 8.16141320000000015 0.39433172 -0.20636362"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[158]" " -type \"float3\" 8.11257739999999927 0.02733317 -0.40908217000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[159]" " -type \"float3\" 8.91505910000000057 -0.66116047 -1.16571960000000008"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[160]" " -type \"float3\" 8.64399339999999938 0.46789858000000001 -1.14305680000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[161]" " -type \"float3\" 8.26537129999999998 -0.50460934999999996 -0.22172533999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[162]" " -type \"float3\" 8.56590079999999965 -0.68745624999999999 -0.64864825999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[163]" " -type \"float3\" 8.40658950000000083 0.45929244000000002 -0.75512707000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[164]" " -type \"float3\" 8.68045039999999979 -0.68166506000000004 -0.82345818999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[165]" " -type \"float3\" 8.44763850000000005 0.46009997000000002 -0.82917291000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[166]" " -type \"float3\" 8.52620510000000031 0.46014842 -0.98131394000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[167]" " -type \"float3\" 8.21222020000000086 0.39868345999999999 -0.61330037999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[168]" " -type \"float3\" 8.28907869999999924 0.45795843000000003 -0.58408684"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[169]" " -type \"float3\" 8.89800739999999912 -0.21360090000000001 -1.314126"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[170]" " -type \"float3\" 8.78790470000000035 0.21238193 -1.30434490000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[171]" " -type \"float3\" 8.21070480000000025 -0.29406389999999999 -0.30297868999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[172]" " -type \"float3\" 8.36554530000000085 0.42287155999999998 -0.45703217000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[173]" " -type \"float3\" 8.95140080000000005 -0.13823416999999999 -1.0640193"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[174]" " -type \"float3\" 8.33716869999999943 -0.27049303000000002 -0.2306598"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[175]" " -type \"float3\" 8.41634559999999965 0.30163785999999998 -1.05568149999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[176]" " -type \"float3\" 8.831769 0.15554124 -1.26568729999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[177]" " -type \"float3\" 8.71782679999999921 0.39212981000000002 -0.97376364000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[178]" " -type \"float3\" 8.45124339999999918 -0.61627007 -0.83854424999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[179]" " -type \"float3\" 8.30469420000000014 -0.57333171000000005 -0.59333152"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[180]" " -type \"float3\" 8.36261460000000056 0.36884888999999998 -0.31750922999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[181]" " -type \"float3\" 8.7096777000000003 0.094460695999999997 -1.29241859999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[182]" " -type \"float3\" 8.88063239999999965 -0.54916823000000003 -1.29628359999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[183]" " -type \"float3\" 8.87118719999999961 -0.66027354999999999 -1.19045650000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[184]" " -type \"float3\" 8.91525269999999992 -0.16305786 -1.22796729999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[185]" " -type \"float3\" 8.09546180000000071 0.30566785000000002 -0.52399426999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[186]" " -type \"float3\" 8.4802464999999998 0.43866506 -0.72067009999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[187]" " -type \"float3\" 8.58922289999999933 0.43138763000000002 -0.95355146999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[188]" " -type \"float3\" 8.44780450000000016 -0.63631236999999996 -0.69822943000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[189]" " -type \"float3\" 8.73554419999999965 -0.62002075000000001 -1.11162479999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[190]" " -type \"float3\" 8.80453589999999942 -0.44916064 -1.28194380000000008"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[191]" " -type \"float3\" 8.42118840000000013 -0.37360232999999998 -0.26125965000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[192]" " -type \"float3\" 8.780407 -0.55777334999999995 -0.71471249999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[193]" " -type \"float3\" 8.42599389999999993 -0.68784319999999999 -0.48785895000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[194]" " -type \"float3\" 8.6355038000000004 -0.55275618999999998 -0.51417267"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[195]" " -type \"float3\" 8.67986679999999922 -0.19975987000000001 -1.2651443"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[196]" " -type \"float3\" 8.82476330000000075 0.18720039999999999 -1.268943"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[197]" " -type \"float3\" 8.95490739999999974 -0.67775463999999996 -1.29312179999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[198]" " -type \"float3\" 8.04708860000000037 0.36911305999999999 -0.28092339999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[199]" " -type \"float3\" 8.99798490000000051 -0.57085549999999996 -1.32790720000000007"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[200]" " -type \"float3\" 8.98151780000000066 -0.58454359 -1.23316559999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[201]" " -type \"float3\" 8.23112390000000005 -0.17531927999999999 -0.94876402999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[202]" " -type \"float3\" 8.85802170000000011 0.15819114000000001 -1.06537529999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[203]" " -type \"float3\" 8.76474190000000064 -0.069577157000000001 -0.44313576999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[204]" " -type \"float3\" 8.29221820000000065 -0.68684489000000004 -0.27698281000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[205]" " -type \"float3\" 8.2824592999999993 -0.64622091999999998 -0.22543563999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[206]" " -type \"float3\" 9.00220389999999959 -0.68058585999999999 -1.3140463"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[207]" " -type \"float3\" 8.05246260000000014 0.47103092000000002 -0.22006565"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[208]" " -type \"float3\" 8.9943123000000007 -0.64891790999999999 -1.357389"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[209]" " -type \"float3\" 8.96018890000000034 -0.11549044999999999 -0.83256984000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[210]" " -type \"float3\" 8.47258090000000053 -0.10624166 -1.19858170000000008"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[211]" " -type \"float3\" 8.82267479999999971 -0.38514546 -0.58399361000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[212]" " -type \"float3\" 8.73636049999999997 0.36035874000000001 -0.81755781000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[213]" " -type \"float3\" 8.19908709999999985 0.073255897 -0.91752248999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[214]" " -type \"float3\" 8.32044510000000059 0.11374989000000001 -1.06751320000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[215]" " -type \"float3\" 8.56848339999999986 -0.28113874999999999 -0.32869609999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[216]" " -type \"float3\" 8.1099768000000001 -0.074277252000000002 -0.64474785000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[217]" " -type \"float3\" 8.84943490000000033 -0.10415576 -0.53294330999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[218]" " -type \"float3\" 8.68754009999999965 -0.46869572999999998 -0.48400580999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[219]" " -type \"float3\" 8.68322470000000024 -0.38911739000000001 -0.43241540000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[220]" " -type \"float3\" 8.26538369999999922 -0.56925380000000003 -0.49247788999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[221]" " -type \"float3\" 8.56397819999999932 -0.55981314000000004 -1.10337770000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[222]" " -type \"float3\" 8.37735179999999957 0.073268652000000004 -1.13311220000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[223]" " -type \"float3\" 8.56772989999999979 -0.52474606000000001 -1.13587940000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[224]" " -type \"float3\" 8.06988430000000001 0.26594235999999999 -0.50279909"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[225]" " -type \"float3\" 8.56799029999999995 -0.36579560999999999 -1.20360409999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[226]" " -type \"float3\" 8.04822539999999975 0.22819312999999999 -0.42171511"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[227]" " -type \"float3\" 8.55291079999999937 0.10668525 -0.31399554000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[228]" " -type \"float3\" 8.5550145999999998 -0.098690629000000002 -1.24028640000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[229]" " -type \"float3\" 8.43090720000000005 -0.23046406999999999 -1.14148910000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[230]" " -type \"float3\" 8.7917929000000008 0.050778031000000001 -0.51555048999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[231]" " -type \"float3\" 8.742281 0.31013003 -0.71047747000000006"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[232]" " -type \"float3\" 8.42719169999999984 -0.56549788000000001 -0.945243"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[233]" " -type \"float3\" 8.80643839999999933 0.3260189 -1.0723275000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[234]" " -type \"float3\" 8.77726080000000053 0.40214178 -1.26719029999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[235]" " -type \"float3\" 8.89860250000000086 -0.59949242999999997 -1.2855802999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[236]" " -type \"float3\" 8.2761755000000008 -0.61039639000000001 -0.22349288"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[237]" " -type \"float3\" 8.52729229999999916 0.32492771999999998 -1.1809696999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[238]" " -type \"float3\" 8.38289550000000006 -0.68049252000000005 -0.36699515999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[239]" " -type \"float3\" 8.09892849999999953 0.47105709000000001 -0.29173681000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[240]" " -type \"float3\" 8.60812469999999941 -0.61048055000000001 -1.04663740000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[241]" " -type \"float3\" 8.78006549999999919 -0.65858625999999998 -1.0477554"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[242]" " -type \"float3\" 8.93855759999999933 -0.66199218999999998 -1.20450149999999989"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[243]" " -type \"float3\" 8.79821210000000065 -0.65557991999999998 -1.08368409999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[244]" " -type \"float3\" 8.89930060000000012 -0.66323292 -1.22835059999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[245]" " -type \"float3\" 8.792346 0.35540184000000002 -1.11849869999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[246]" " -type \"float3\" 8.61122229999999966 0.30597648 -1.2598488000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[247]" " -type \"float3\" 8.27138519999999922 -0.53991162999999998 -0.22274712999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[248]" " -type \"float3\" 8.86063960000000073 0.046199411000000003 -1.241259"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[249]" " -type \"float3\" 8.80168150000000082 0.039071201999999999 -1.29673609999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[250]" " -type \"float3\" 8.16643430000000059 -0.10149305 -0.19155614000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[251]" " -type \"float3\" 8.03600409999999954 0.31560758 -0.27424409999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[252]" " -type \"float3\" 8.224637 0.35347483000000002 -0.20490380999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[253]" " -type \"float3\" 8.37645050000000069 -0.58008294999999999 -0.28417020999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[254]" " -type \"float3\" 8.27251150000000024 -0.60296987999999996 -0.35065039999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[255]" " -type \"float3\" 8.04514119999999977 0.40341184000000002 -0.14169656999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[256]" " -type \"float3\" 8.14057539999999946 -0.069155156999999995 -0.20661613000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[257]" " -type \"float3\" 8.79516510000000018 0.14351815000000001 -1.30266449999999989"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[258]" " -type \"float3\" 8.776474 0.28760912999999999 -1.29816939999999992"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[259]" " -type \"float3\" 8.17566009999999999 -0.13785634999999999 -0.19512396000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[260]" " -type \"float3\" 8.87079050000000002 -0.14263004000000001 -1.30645330000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[261]" " -type \"float3\" 8.273015 -0.57480693000000005 -0.22294596"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[262]" " -type \"float3\" 8.93959620000000044 -0.43340521999999998 -1.33552230000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[263]" " -type \"float3\" 8.02345090000000027 0.39875880000000002 -0.15552418000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[264]" " -type \"float3\" 8.24085329999999949 -0.50940037000000005 -0.24034384"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[265]" " -type \"float3\" 8.26128390000000046 -0.65080081999999995 -0.23921450999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[266]" " -type \"float3\" 8.11010839999999966 0.076711416000000004 -0.18308875999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[267]" " -type \"float3\" 8.07484909999999978 0.22038390999999999 -0.17024896"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[268]" " -type \"float3\" 8.25602630000000026 -0.092565164000000005 -1.00333249999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[269]" " -type \"float3\" 8.37104129999999991 -0.52640390000000004 -0.25687148999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[270]" " -type \"float3\" 8.101944 0.11289072 -0.17898881"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[271]" " -type \"float3\" 8.15897939999999977 -0.064988956000000001 -0.18733494000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[272]" " -type \"float3\" 8.84266090000000027 -0.30282268000000001 -0.55911284999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[273]" " -type \"float3\" 8.15544030000000042 0.31389144000000002 -0.63446212000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[274]" " -type \"float3\" 8.248806 -0.58024472000000005 -0.23989926"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[275]" " -type \"float3\" 8.53452970000000022 -0.41241466999999998 -1.17790930000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[276]" " -type \"float3\" 9.0166568999999992 -0.64799678000000005 -1.34499239999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[277]" " -type \"float3\" 8.96434020000000054 -0.58202052000000004 -1.34305019999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[278]" " -type \"float3\" 8.19605540000000055 -0.38227749 -0.44691625000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[279]" " -type \"float3\" 8.22495170000000009 -0.36514102999999998 -0.24463246999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[280]" " -type \"float3\" 8.934226 -0.35859010000000002 -1.33136340000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[281]" " -type \"float3\" 8.75574970000000086 0.39737675 -1.28159489999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[282]" " -type \"float3\" 8.20074840000000016 0.19463599000000001 -0.84394716999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[283]" " -type \"float3\" 8.98725609999999975 -0.49831235000000002 -1.31944290000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[284]" " -type \"float3\" 8.94915869999999991 -0.50680959000000003 -1.34009040000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[285]" " -type \"float3\" 8.799593 0.29323462 -1.28118069999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[286]" " -type \"float3\" 8.99946689999999982 -0.57412231000000002 -1.34002470000000007"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[287]" " -type \"float3\" 8.78441620000000079 0.36557969000000001 -1.27235290000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[288]" " -type \"float3\" 8.22310449999999982 -0.49647902999999999 -0.52726877000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[289]" " -type \"float3\" 8.8847208000000002 -0.061691031 -1.26531419999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[290]" " -type \"float3\" 8.84029959999999981 -0.072545766999999997 -1.29964140000000006"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[291]" " -type \"float3\" 8.86840149999999916 0.014179498 -1.24519920000000006"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[292]" " -type \"float3\" 8.15836329999999954 -0.14175293999999999 -0.21699547999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[293]" " -type \"float3\" 8.14573569999999947 -0.19029343000000001 -0.68795949000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[294]" " -type \"float3\" 8.850009 0.079843580999999997 -1.25483790000000006"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[295]" " -type \"float3\" 8.91888709999999918 -0.28556851 -1.3233273000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[296]" " -type \"float3\" 8.47896579999999922 -0.40128827 -0.28699550000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[297]" " -type \"float3\" 8.797266 0.070791810999999996 -1.29816519999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[298]" " -type \"float3\" 8.20847129999999936 -0.29021828999999999 -0.23400362"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[299]" " -type \"float3\" 8.89692310000000042 -0.028864771000000001 -0.65209930999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[300]" " -type \"float3\" 8.06519220000000026 0.1269941 -0.45178959000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[301]" " -type \"float3\" 8.68119429999999959 0.20051496999999999 -0.47328924999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[302]" " -type \"float3\" 8.12215040000000066 0.033163756000000003 -0.32676729999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[303]" " -type \"float3\" 8.81548309999999979 0.22280183000000001 -1.28374370000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[304]" " -type \"float3\" 8.23419759999999989 -0.43790191000000001 -0.24785589999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[305]" " -type \"float3\" 8.97379210000000072 -0.42586267 -1.31704949999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[306]" " -type \"float3\" 8.6787156999999997 0.34052982999999998 -0.63805400999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[307]" " -type \"float3\" 8.30334470000000024 -0.46710455000000001 -0.85900414000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[308]" " -type \"float3\" 8.1529045 -0.089572281000000004 -0.80253744000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[309]" " -type \"float3\" 8.33434959999999947 -0.36386937000000003 -1.02228870000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[310]" " -type \"float3\" 8.19749069999999946 -0.17229253 -0.88160950000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[311]" " -type \"float3\" 8.55635260000000031 -0.47047544000000002 -0.35429409000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[312]" " -type \"float3\" 8.51103020000000043 0.46060368000000002 -0.89127517000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[313]" " -type \"float3\" 8.91371439999999993 -0.67794125999999999 -1.21848869999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[314]" " -type \"float3\" 8.65145109999999917 -0.68419766000000004 -0.83964919999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[315]" " -type \"float3\" 8.98262979999999978 -0.68613279000000005 -1.32689849999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[316]" " -type \"float3\" 8.24045940000000066 0.46172825000000001 -0.51282011999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[317]" " -type \"float3\" 8.94656559999999956 -0.10979366 -0.74065208000000005"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[318]" " -type \"float3\" 8.91587640000000015 0.0044340789 -0.78024125"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[319]" " -type \"float3\" 8.94690130000000039 -0.18559487 -0.71692102999999996"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[320]" " -type \"float3\" 8.34211250000000071 -0.12494166 -1.09601529999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[321]" " -type \"float3\" 8.997242 -0.36834057999999997 -1.14965880000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[322]" " -type \"float3\" 8.50686450000000072 0.21589174999999999 -1.20973210000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[323]" " -type \"float3\" 8.384675 -0.68721359999999998 -0.41708484000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[324]" " -type \"float3\" 8.794261 -0.26480587999999999 -0.49185318"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[325]" " -type \"float3\" 8.96939749999999947 -0.26845272999999997 -0.81700653000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[326]" " -type \"float3\" 8.313364 -0.68233710999999997 -0.26317682999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[327]" " -type \"float3\" 8.98073669999999957 -0.68399465000000004 -1.32759139999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[328]" " -type \"float3\" 8.40311430000000037 -0.11575776 -1.1501444999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[329]" " -type \"float3\" 8.44016839999999924 -0.34883201000000003 -1.134571"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[330]" " -type \"float3\" 8.725563 -0.67679524000000002 -0.894261"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[331]" " -type \"float3\" 8.38037970000000065 -0.35906403999999997 -1.081095"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[332]" " -type \"float3\" 8.26478580000000029 0.035391182 -1.02196"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[333]" " -type \"float3\" 8.305728 -0.40222695000000003 -0.94954925999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[334]" " -type \"float3\" 9.00470259999999989 -0.39950004 -1.10215719999999995"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[335]" " -type \"float3\" 8.99993229999999933 -0.43497530000000001 -1.06409449999999994"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[336]" " -type \"float3\" 8.93179420000000057 -0.43249586000000001 -0.830953"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[337]" " -type \"float3\" 8.12496950000000062 0.030966848000000002 -0.74628793999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[338]" " -type \"float3\" 8.920043 -0.30307096 -0.68082476000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[339]" " -type \"float3\" 8.39276219999999995 0.22348174000000001 -1.090462"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[340]" " -type \"float3\" 8.88869949999999953 -0.22178274000000001 -0.59353524000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[341]" " -type \"float3\" 8.65708159999999971 -0.27403516 -0.38285887000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[342]" " -type \"float3\" 8.90338329999999978 -0.10532951 -0.62757795999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[343]" " -type \"float3\" 8.47611619999999988 0.095219254000000003 -0.27558221999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[344]" " -type \"float3\" 8.93073560000000022 -0.67553412999999995 -1.25971450000000007"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[345]" " -type \"float3\" 8.76129339999999956 0.39042756000000001 -1.16125110000000009"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[346]" " -type \"float3\" 8.65050890000000017 0.36283328999999997 -1.24335090000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[347]" " -type \"float3\" 8.957202 -0.67371022999999997 -1.24342240000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[348]" " -type \"float3\" 8.4054164999999994 -0.68154102999999999 -0.40272236"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[349]" " -type \"float3\" 8.38143540000000087 -0.68626069999999995 -0.41763984999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[350]" " -type \"float3\" 8.20249650000000052 0.41696891000000003 -0.24859078000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[351]" " -type \"float3\" 8.75148680000000034 0.38828614 -1.04918059999999991"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[352]" " -type \"float3\" 8.77634429999999988 -0.66838598000000005 -0.95881826000000003"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[353]" " -type \"float3\" 8.73984150000000071 -0.66566479000000001 -0.97941964999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[354]" " -type \"float3\" 8.8053884999999994 -0.60549843000000003 -0.84102874999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[355]" " -type \"float3\" 8.64693929999999966 -0.68237227 -0.84189314000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[356]" " -type \"float3\" 8.433588 0.46059927000000001 -0.73915242999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[357]" " -type \"float3\" 8.47395230000000055 0.46095397999999999 -0.81351017999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[358]" " -type \"float3\" 8.41286179999999995 -0.59106249 -0.85531265000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[359]" " -type \"float3\" 8.53693679999999944 0.38288762999999998 -0.53471524000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[360]" " -type \"float3\" 8.69374179999999974 -0.67382067000000001 -0.91221249000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[361]" " -type \"float3\" 8.56105610000000006 -0.69189995999999998 -0.69777352000000004"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[362]" " -type \"float3\" 8.72897430000000085 -0.67508608000000003 -0.89213293999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[363]" " -type \"float3\" 8.87017439999999979 -0.65816224000000001 -1.09249960000000002"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[364]" " -type \"float3\" 8.82321450000000063 -0.66227192000000001 -1.0244880999999999"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[365]" " -type \"float3\" 8.9843826 -0.47447261000000002 -1.03390369999999998"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[366]" " -type \"float3\" 8.82140449999999987 -0.65651881999999995 -1.1183145000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[367]" " -type \"float3\" 8.59370039999999946 0.46755424000000001 -1.03290189999999993"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[368]" " -type \"float3\" 8.42647739999999956 -0.59651052999999998 -0.32831776000000001"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[369]" " -type \"float3\" 8.337779 -0.68634921000000004 -0.34663003999999997"
-		
-		2 "|pillow:pCube2|pillow:pCubeShape2" "pnts[370]" " -type \"float3\" 8.71476080000000053 0.47444608999999999 -1.19148520000000002"
-		
-		3 "|pillow:pCube2|pillow:pCubeShape2.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		5 3 "pillowRN" "|pillow:pCube2|pillow:pCubeShape2.instObjGroups" "pillowRN.placeHolderList[1]" 
-		":initialShadingGroup.dsm";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	rename -uid "282B73D0-470A-2FF1-4A71-F4BEB2DED45E";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -319.95126634835628 -102.24805924447639 ;
 	setAttr ".tgi[0].vh" -type "double2" 543.91425563935547 330.5250378602625 ;
+createNode reference -n "pillowRN";
+	rename -uid "1DA7BBF5-4E05-0FD0-59E9-C5A5BD4BF743";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"pillowRN"
+		"pillowRN" 0
+		"pillowRN" 10
+		2 "|pillow:pCube1" "translate" " -type \"double3\" 0 0 0"
+		2 "|pillow:pCube1" "rotate" " -type \"double3\" 0 0 0"
+		2 "|pillow:pCube1" "scale" " -type \"double3\" 1 1 1"
+		2 "|pillow:pCube1" "rotatePivot" " -type \"double3\" 8.05120161313419835 4.16788168963260119 -0.62543383108481232"
+		
+		2 "|pillow:pCube1" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|pillow:pCube1" "scalePivot" " -type \"double3\" 8.05120161313419835 4.16788168963260119 -0.62543383108481232"
+		
+		2 "|pillow:pCube1|pillow:pCubeShape1" "pnts" " -s 371"
+		2 "|pillow:pCube1|pillow:pCubeShape1" "pt[0:165]" (" -type \"float3\" 7.89855190000000018 0.55180401000000001 -1.11493029999999993 8.54631329999999956 -0.63683909000000005 -1.12094889999999991 7.536077 0.62900924999999996 -0.13477244999999999 8.22249410000000047 -0.54166502000000005 -0.12997152000000001 8.24146649999999958 -0.020977406000000001 -1.08021879999999992 8.19893459999999941 -0.049219288 -1.10700960000000004 8.36260509999999968 -0.59651262000000005 -0.63026011000000004 7.74658539999999984 0.58104676 -0.62780594999999995 8.40707109999999957 -0.32615804999999998 -1.10786720000000005 8.37805649999999957 -0.34484514999999999 -1.11556279999999997 8.03870389999999979 -0.22334348000000001 -0.15824309 8.0538501999999994 -0.26264489000000002 -0.16415171000000001 7.86503550000000029 0.083953879999999995 -0.14114428000000001 8.2985085999999999 -0.56051331999999998 -0.34500449999999999 7.80522730000000031 0.557706 -0.883093 8.02237419999999979 0.23579918 -1.124163 7.78247309999999981 0.54723805000000003 -0.89140182999999995 7.736033 0.35209258999999998 -0.13051778"
+		+ " 7.63473989999999958 0.61849677999999997 -0.34789819 8.47965340000000012 -0.57785386000000005 -0.86323607000000002 7.61185259999999975 0.60660172000000001 -0.35595915 7.70906689999999983 0.57308870999999995 -0.60551721000000003 8.38368129999999923 -0.33698031000000001 -1.11973790000000006 8.15122030000000031 -0.55076252999999997 -0.71024936000000005 8.39770320000000048 -0.59008168999999999 -0.75587468999999996 7.85029220000000016 0.55758089 -0.99828969999999995 8.055788 0.25346076000000001 -1.12157449999999992 7.96840810000000044 0.047186646999999998 -1.05937189999999992 7.86604450000000011 0.26999441000000002 -1.07965310000000003 7.97000360000000008 -0.10820876 -0.15662234999999999 7.81586550000000013 0.15375844 -0.14281738999999999 7.98834710000000037 -0.097033873000000007 -0.14246428 8.09833240000000032 -0.28472930000000002 -0.14422423000000001 7.835515 0.16513938 -0.13329731 7.75818350000000034 0.55499971000000003 -0.79686356000000003 8.43771169999999948 -0.58208925 -0.74494391999999998 8.4505844000000003"
+		+ "3 -0.59474890999999996 -0.87254940999999997 8.48461720000000064 -0.46974927 -1.10128120000000007 8.30076889999999956 -0.19046736 -1.11498629999999999 8.24103640000000048 -0.47233659 -0.96971624999999995 8.45090959999999924 -0.49305909999999997 -1.11129980000000006 8.14545919999999946 -0.44091076000000001 -0.13744487999999999 7.95717910000000028 0.38898422999999999 -1.12807070000000009 8.13337420000000044 0.061010964000000001 -1.10964810000000003 8.243906 -0.56097889000000001 -0.25931069000000001 7.91725589999999979 -0.34241873 -0.57028007999999997 8.12712759999999967 0.40470529 -0.81334466000000005 8.52380660000000034 -0.45794138000000001 -0.87017577999999995 7.61134480000000035 0.62643837999999996 -0.28419562999999998 7.98116869999999956 -0.42067527999999998 -0.76545328000000001 8.06678490000000004 -0.48606196000000002 -0.81384593000000005 8.50351239999999997 -0.32230636000000001 -0.64265066000000004 8.28620429999999963 -0.57626807999999996 -0.38266376000000002 7.89775179999999999 -0.24285965000000001 -0.391"
+		+ "80018999999999 7.93839170000000038 -0.022571806 -0.13908508 8.18979550000000067 0.24221103999999999 -0.34522268 7.991858 0.51666385000000004 -0.45516857999999999 8.38528349999999989 -0.28995404000000002 -1.11074049999999991 8.2980994999999993 -0.14149664000000001 -1.10205660000000005 8.34214970000000022 -0.21562083000000001 -1.10792819999999992 8.44992730000000059 -0.59545773000000002 -0.93828791 8.19116690000000069 -0.31244040000000001 -1.03238420000000009 8.01638319999999993 -0.18636264999999999 -0.16221168999999999 7.92028140000000036 -0.033318035000000003 -0.15283003000000001 8.28788660000000021 -0.55613296999999995 -0.31402716000000003 8.03747650000000036 -0.17353114 -0.14648989000000001 7.78951879999999974 0.56013732999999999 -0.82131480999999995 8.32070060000000034 -0.56829934999999998 -0.40683304999999997 8.01837160000000004 0.32981305999999999 -1.11893069999999994 8.06147859999999916 0.15881076 -1.11521479999999995 8.41192910000000005 -0.41939172000000002 -1.11291809999999991 8.500701 -0.565635560000"
+		+ "00004 -1.11582329999999996 7.8749962 0.35759046999999999 -1.09651150000000008 7.861165 0.10048877000000001 -1.01910759999999989 7.74311210000000028 0.44302836000000001 -0.89559907000000005 7.67556189999999994 0.23148584 -0.79469723000000003 7.59007879999999968 0.61491196999999997 -0.29143584 7.56961580000000023 0.51495802000000002 -0.28322600999999997 8.05549339999999958 -0.36958835000000001 -0.24713405999999999 8.088377 -0.33464434999999998 -0.15907690999999999 8.12556170000000044 -0.40895127999999997 -0.14682263000000001 8.29801559999999938 -0.58067422999999996 -0.41327842999999997 7.66929719999999993 0.41184258000000001 -0.13655154 7.7135018999999998 0.33980434999999998 -0.13729531 7.64605710000000016 0.44738242 -0.13603933000000001 7.55600740000000037 0.63988179000000001 -0.12814738000000001 7.77710059999999981 0.27861130000000001 -0.13018004999999999 8.07973860000000066 -0.24772252 -0.14685163000000001 8.118392 -0.31910517999999999 -0.14306624000000001 7.91299390000000002 0.33011954999999998 -0.20265111 "
+		+ "7.69125410000000009 0.42353763999999999 -0.12993995999999999 7.64454459999999969 0.49482431999999998 -0.12855925000000001 7.85520510000000005 0.47862779999999999 -0.22888747000000001 7.6868981999999999 0.59673452000000005 -0.47521733999999999 8.037735 0.49228551999999998 -0.47545913000000001 8.09920980000000057 0.46051818 -0.56377792000000004 8.02486419999999967 0.40107970999999998 -1.04433240000000005 8.10810090000000017 0.19665498000000001 -1.09138979999999997 8.36630249999999975 0.12662329999999999 -0.76124579000000003 8.44848159999999915 -0.39972543999999999 -1.10341719999999999 8.52100850000000065 -0.43303338000000002 -0.99777693000000001 8.50027079999999913 -0.55073552999999997 -0.88824122999999999 8.45858570000000043 -0.57944560000000001 -0.80411798000000001 7.57830479999999973 0.63483202000000005 -0.18966953 7.79283950000000036 0.54665768000000003 -0.92089427000000001 7.87989189999999962 0.54158163000000004 -1.12123639999999991 7.7967544000000002 0.55820364 -0.85273403000000003 7.765265 0.551224469999"
+		+ "99997 -0.82936268999999996 8.50025370000000002 -0.58299416000000004 -0.92602271000000003 8.565732 -0.62800831000000001 -1.11505779999999999 8.41445350000000047 -0.58743023999999999 -0.81556094000000001 8.26407910000000001 -0.56836646999999996 -0.32132810000000001 8.32966709999999999 -0.59155232000000002 -0.50511384000000004 8.315629 -0.58088218999999996 -0.67478168000000005 8.37859440000000077 -0.59404469000000004 -0.69432020000000005 8.20510480000000086 -0.55111182000000003 -0.135783 8.38478090000000087 -0.58598620000000001 -0.59122180999999996 7.85501809999999967 0.54428374999999996 -1.06270409999999993 8.25680730000000018 -0.065292193999999998 -1.0954451999999999 8.19822409999999913 0.059193026000000003 -1.07569369999999997 7.99393370000000036 0.31327720999999997 -1.1298089 8.25223639999999925 -0.11917355 -1.11120050000000004 8.15009880000000031 0.017437828999999998 -1.1054195 7.70460220000000007 0.47803813000000001 -0.73102288999999998 7.69748639999999984 0.57471824000000005 -0.57557636000000001 7.6328363"
+		+ "0000000013 0.16640379 -0.56333131000000003 7.88863130000000012 -0.063974461999999996 -0.26087892000000001 7.8744588000000002 0.040172237999999999 -0.15006836000000001 7.76417209999999969 0.57618904000000004 -0.69039512000000003 7.92330220000000018 0.55544811000000005 -0.651847 8.070653 0.47798636999999999 -0.78647327 8.12320330000000013 0.43871750999999998 -0.70564705000000005 8.27866739999999979 -0.10182577 -1.094895 7.72494839999999972 0.58488107 -0.56715727000000005 7.73750689999999963 0.56755893999999996 -0.69813250999999998 8.41642279999999943 -0.58466189999999996 -0.68416231999999999 8.35598749999999946 -0.59669243999999999 -0.59816557000000004 8.52574350000000081 -0.55775142 -1.11167879999999997 8.46878240000000027 -0.48832697000000003 -1.12047619999999992 7.80389979999999994 -0.16012223 -0.77971232000000001 8.163763 -0.47852372999999998 -0.13773589999999999 8.25630089999999939 -0.54832745000000005 -0.22185387000000001 8.07570360000000065 0.11558689 -0.23354742000000001 8.389802 0.013716963 -0.44761353"
+		+ "999999998 8.03670879999999954 0.29041907 -1.12305720000000009 8.19713969999999925 -0.0054033548000000002 -1.11220370000000002 7.81147770000000019 0.43164453000000003 -1.03916940000000002 7.75948949999999993 -0.0076777301999999999 -0.37692469000000001 7.66737170000000035 0.066939175000000004 -0.63242339999999997 8.22500609999999988 -0.55619889 -0.19820866000000001 7.99919940000000018 -0.42940940999999999 -0.51389437999999998 8.03739449999999955 0.42014864000000002 -0.33666602000000001 8.2646064999999993 0.25591412000000002 -0.44893399 8.17000960000000021 0.32602331000000001 -0.38830473999999998 8.22139740000000074 0.15033677000000001 -0.97441727 8.54195789999999988 -0.61577928000000004 -1.05404340000000007 7.82584 0.55811345999999995 -0.94143825999999997 7.68594069999999974 0.56454176 -0.19623972000000001 7.73965879999999995 0.13582420000000001 -0.30898525999999998 8.51023960000000024 -0.59051377000000005 -0.95824498000000002 7.8296342000000001 0.54597896000000001 -1.0059205 8.132637 -0.35838177999999998 -0.13"
+		+ "778865000000001 8.35421939999999985 -0.57907843999999997 -0.49904843999999998 7.72915080000000021 0.57022965000000003 -0.66653578999999996 8.40521910000000005 -0.58675527999999999 -0.65341561999999997 7.74500990000000034 0.564022 -0.73053186999999997"
+		)
+		2 "|pillow:pCube1|pillow:pCubeShape1" "pt[166:331]" (" 7.773293 0.54862922000000003 -0.86091607999999997 7.62331629999999993 0.50132626000000002 -0.51915199000000001 7.672853 0.58135658999999995 -0.51502429999999999 8.277545 -0.15446968 -1.11352340000000005 8.0143614000000003 0.2732482 -1.12927090000000008 7.98025369999999956 -0.16313681999999999 -0.21198407 7.785111 0.58125066999999997 -0.42612928 8.35718059999999952 -0.020200632999999999 -0.93658494999999997 8.09772970000000036 -0.1040311 -0.17927939000000001 7.723793 0.35119781 -0.88481259000000001 8.08473970000000008 0.22849966999999999 -1.10112619999999994 7.966835 0.51092594999999996 -0.88003050999999999 8.17858310000000088 -0.55943655999999997 -0.63367319 8.09862419999999972 -0.49308118000000001 -0.42443030999999998 7.84012789999999971 0.55055732000000002 -0.31269219999999998 7.99779459999999975 0.13954401 -1.0957129000000001 8.40218729999999958 -0.50390016999999998 -1.06425229999999993 8.46593090000000004 -0.60150170000000003 -0.97020096 8.29410930000000057 -0.082777165 -1.05477170000000009 7.58356190000"
+		+ "00003 0.40168210999999998 -0.42193969999999997 7.809423 0.56739806999999998 -0.65006207999999999 7.84599970000000013 0.534298 -0.84706676000000003 8.21970179999999928 -0.55463541000000005 -0.52284609999999998 8.3537044999999992 -0.56728590000000001 -0.89092534999999995 8.30042079999999949 -0.40957037000000002 -1.05037739999999991 8.20336340000000064 -0.20332407999999999 -0.20670881999999999 8.468976 -0.42062736000000001 -0.59798424999999999 8.27571389999999951 -0.57260042 -0.35185355000000001 8.39421459999999975 -0.40190181000000003 -0.41980803 8.0975684999999995 -0.16707353 -1.04113440000000002 8.06516650000000013 0.25973749000000002 -1.10556469999999996 8.51837729999999915 -0.62505412000000005 -1.06153790000000003 7.57895759999999985 0.50531309999999996 -0.2325131 8.50338359999999938 -0.51295584000000005 -1.10588050000000004 8.51908489999999929 -0.51222389999999995 -1.02870449999999991 7.78428550000000019 -0.15683807 -0.72538882000000005 8.15757849999999962 0.27312174 -0.95108311999999995 8.3288983999999999"
+		+ "2 0.13664570000000001 -0.43325084000000003 8.2147597999999995 -0.55428314000000001 -0.16714033 8.20328429999999997 -0.50389486999999999 -0.12969396 8.55468650000000075 -0.62407356999999997 -1.08520349999999999 7.55819180000000035 0.62386565999999999 -0.19633333 8.52406410000000037 -0.60047852999999995 -1.1204407999999999 8.414958 0.048303481000000002 -0.76158428 7.89936349999999976 -0.091507137000000002 -0.96471119000000005 8.46932319999999983 -0.20914462 -0.52083062999999996 8.03558250000000029 0.51011962 -0.75941473000000004 7.66487120000000033 0.10287626 -0.72017288000000002 7.714119 0.13715985 -0.85987824000000002 8.27512549999999969 -0.095092826000000005 -0.29201495999999999 7.71782059999999959 -0.014674598000000001 -0.48058894000000002 8.39235309999999934 0.097834744000000001 -0.51315962999999998 8.41275120000000065 -0.29996984999999998 -0.41326699 8.39028740000000006 -0.20805322000000001 -0.38047248 8.08916849999999954 -0.47647223 -0.34050223000000002 8.18454930000000047 -0.53144062000000003 -0.8621600"
+		+ "2999999997 7.76234339999999978 0.092114836000000005 -0.91594987999999999 8.1653222999999997 -0.50033927 -0.89127701999999998 7.58305410000000002 0.35998437 -0.39750284000000002 8.08424089999999929 -0.34724181999999998 -0.95905715000000002 7.60047769999999989 0.33220973999999998 -0.32767421000000002 8.10957720000000037 0.30944842 -0.31582195000000002 7.95628310000000027 -0.077759773000000004 -1.01121409999999989 7.92825220000000019 -0.21725863000000001 -0.90169555000000001 8.2850981000000008 0.25306921999999998 -0.50530951999999996 8.088335 0.47877732000000001 -0.67284732999999997 8.11016850000000034 -0.53046530000000003 -0.71701294000000004 8.04408360000000044 0.43824818999999998 -0.96427708999999995 7.93845609999999979 0.47629519999999997 -1.1172936 8.44057560000000073 -0.55138551999999996 -1.05405510000000002 8.18398859999999928 -0.46722080999999999 -0.13064364000000001 7.77737429999999996 0.37043970999999998 -1.0020616 8.26683039999999991 -0.54946147999999995 -0.25217374999999997 7.57961750000000034 0.6181"
+		+ "8695000000001 -0.25931241999999999 8.25732709999999948 -0.56632017999999995 -0.82070379999999998 8.42376609999999992 -0.58815013999999999 -0.84520483000000002 8.52076439999999913 -0.59474152000000002 -0.99197047999999999 8.42889120000000069 -0.58873021999999997 -0.87621969 8.4814948999999995 -0.60701572999999998 -1.00379430000000003 8.00833989999999929 0.45790206999999999 -1.00045439999999997 7.83669520000000031 0.3498424 -1.074929 8.15172770000000035 -0.39438361 -0.13613439999999999 8.159729 0.12385702 -1.0763898999999999 8.09782410000000041 0.096252835999999994 -1.10881049999999992 7.89345219999999959 0.051164012000000002 -0.13741323 7.59268859999999979 0.44893512000000002 -0.22032784 7.75693940000000026 0.53270817000000004 -0.20155150999999999 8.242178 -0.43033051 -0.19694406 8.14523220000000059 -0.48389161000000003 -0.22891771999999999 7.59922080000000033 0.56681788 -0.12805648 7.85441729999999971 0.077770554000000006 -0.14792485999999999 8.04871080000000028 0.20296542000000001 -1.122472 7.975894 0.350944"
+		+ "58000000001 -1.129938 7.91506910000000019 0.014112356 -0.13815013000000001 8.22764210000000062 -0.083551176000000005 -1.11002090000000009 8.16710759999999958 -0.43053480999999999 -0.13316241000000001 8.396102 -0.38075688000000002 -1.11551090000000008 7.57895230000000009 0.55577761000000003 -0.13470562999999999 8.10877039999999916 -0.37093228 -0.14765684000000001 8.18343929999999986 -0.51476449000000002 -0.13639725999999999 7.77567580000000014 0.22920960000000001 -0.13893275999999999 7.69096709999999995 0.37556481000000003 -0.13718811 7.7583460999999998 -0.076635553999999995 -0.77966093999999997 8.22295860000000012 -0.37014773000000001 -0.18020164999999999 7.7551798999999999 0.26634541 -0.13794221000000001 7.87346460000000015 0.088778890999999999 -0.13647749000000001 8.45973110000000084 -0.11533356 -0.51292282 7.60331820000000036 0.39953001999999999 -0.51788931999999999 8.14419359999999948 -0.44339663000000001 -0.14173315 8.08090310000000045 -0.39659336000000001 -0.92917812 8.54602719999999927 -0.5934886900000"
+		+ "0004 -1.11464120000000011 8.47514819999999958 -0.53301655999999997 -1.1109427999999999 7.96623850000000022 -0.28449380000000002 -0.31209987 8.03602219999999967 -0.22395913000000001 -0.16237889 8.36247829999999936 -0.30286178000000002 -1.11869280000000004 7.91823720000000009 0.46505964 -1.12440659999999992 7.63636020000000038 0.24348643 -0.67545772000000004 8.46718410000000077 -0.43751310999999998 -1.10463519999999993 8.43264770000000041 -0.45656176999999998 -1.11347269999999998 7.997807 0.36382778999999998 -1.12117869999999997 8.50285820000000037 -0.51838470000000003 -1.11516060000000006 7.95796919999999997 0.43839394999999998 -1.1189013000000001 8.01473329999999962 -0.41412270000000001 -0.36747291999999998 8.21758840000000035 0.010855894 -1.08843109999999998 8.17506979999999928 -0.014261472000000001 -1.10655750000000008 8.17824839999999931 0.091021352 -1.07759549999999993 7.89619729999999986 0.0030837850999999999 -0.15180542999999999 7.7840423999999997 -0.13779633999999999 -0.50855041000000001 8.133602099999"
+		+ "99917 0.15463033000000001 -1.0883931 8.32202529999999996 -0.22776544000000001 -1.11706529999999993 8.25741769999999953 -0.22742006000000001 -0.23339745000000001 8.0809154999999997 0.12832671000000001 -1.11227169999999997 7.99449249999999978 -0.14658452999999999 -0.15874714000000001 8.372201 0.16191246000000001 -0.62028181999999998 7.64800310000000039 0.22387777 -0.34384102 8.14092349999999954 0.39875144000000001 -0.46903619000000002 7.76664259999999995 0.15890324 -0.24758863 8.03909589999999952 0.2925469 -1.11892379999999991 8.07238289999999914 -0.29889387000000001 -0.15931316000000001 8.42712019999999917 -0.36375838999999999 -1.1076166999999999 8.04020880000000027 0.51348311000000002 -0.60943055000000002 7.98657079999999997 -0.43228343000000002 -0.63961685000000001 7.72027779999999986 -0.053038239000000001 -0.60797173000000004 7.9297285000000004 -0.35006644999999997 -0.78080589 7.77147149999999964 -0.14669198 -0.66830635000000005 8.33430579999999921 -0.29931489 -0.29136211000000001 7.78320789999999985 0.5634"
+		+ "4198999999995 -0.78895866999999997 8.50229550000000067 -0.61811309999999997 -0.99712491000000003 8.37722589999999911 -0.59724038999999995 -0.66089147000000004 8.53684229999999999 -0.63551210999999996 -1.09136129999999998 7.64795110000000022 0.59056014000000001 -0.45237195000000002 8.42457680000000053 0.069190851999999997 -0.68894177999999995 8.34217360000000063 0.17578773 -0.72555691 8.4614401000000008 -0.0053463848000000003 -0.66330641999999995 7.821373 -0.11345729 -0.86223304000000001 8.46704010000000018 -0.26855117000000001 -0.98786121999999998 7.79633470000000006 0.24797548 -1.01029480000000005 8.25820640000000061 -0.56555158000000005 -0.29047837999999998 8.42021470000000072 -0.071135483999999999 -0.45673039999999998 8.48836329999999961 -0.10674396 -0.73621046999999995 8.23461439999999989 -0.54348867999999995 -0.16040405999999999 8.53418059999999912 -0.63372671999999997 -1.09179219999999999 7.85607719999999965 -0.10389062 -0.91495585000000001 7.98557040000000029 -0.33784533 -0.88636826999999996 8.42376040"
+		+ "000000081 -0.58744543999999999 -0.71597290000000002 7.95216040000000035 -0.34842574999999998 -0.83424759000000004"
+		)
+		2 "|pillow:pCube1|pillow:pCubeShape1" "pt[332:370]" (" 7.70961379999999963 0.054747634000000003 -0.80792730999999995 7.93928770000000039 -0.38119322 -0.71621274999999995 8.49815560000000048 -0.29090893000000001 -0.94939214000000005 8.51810170000000078 -0.32156378000000002 -0.91577494000000004 8.51852610000000077 -0.28663959999999999 -0.72482848 7.66229009999999988 0.078539126000000001 -0.57167464000000001 8.4949255000000008 -0.12553564 -0.61959410000000004 7.72608569999999961 0.25928071000000003 -0.90017491999999999 8.45776749999999922 -0.029638576999999999 -0.55495793000000004 8.33431239999999995 -0.083121247999999995 -0.34910622000000002 8.41478350000000042 0.087847769000000006 -0.59498041999999995 8.05822090000000024 0.29193880999999999 -0.27240762000000002 8.50533770000000011 -0.62049644999999998 -1.03198520000000005 7.95666549999999972 0.48126447 -1.03174830000000006 7.85173650000000034 0.41873470000000002 -1.07419369999999992 8.53147129999999976 -0.61115164 -1.02394509999999994 8.2773886000000001 -0.55350553999999996 -0.28335923000000002 8.2549027999999999"
+		+ "8 -0.56519973000000001 -0.2904658 7.70121569999999966 0.58705812999999996 -0.23780333000000001 7.977879 0.49838546 -0.94341569999999997 8.44733910000000066 -0.58233522999999998 -0.77498661999999996 8.40966990000000081 -0.58941339999999998 -0.78514229999999996 8.477169 -0.48989126 -0.69496250000000004 8.37204930000000047 -0.59650594000000001 -0.66205822999999997 7.75586610000000043 0.57906400999999996 -0.65877819000000004 7.7712412000000004 0.57221233999999999 -0.72285831 8.13124370000000063 -0.54266285999999997 -0.64274770000000003 7.92816540000000014 0.55346351999999999 -0.51043176999999995 8.39068220000000053 -0.59298635 -0.72487855000000001 8.33924870000000062 -0.59371286999999995 -0.53573917999999998 8.42654319999999935 -0.58469886000000004 -0.71505814999999995 8.4893502999999999 -0.58112925000000004 -0.89462470999999999 8.46820450000000058 -0.58047550999999997 -0.83399206000000004 8.52840420000000066 -0.35967526 -0.88606781000000001 8.44026180000000004 -0.59234326999999998 -0.90667969000000004 7.81493039"
+		+ "999999972 0.55789535999999995 -0.91257374999999996 8.28033729999999935 -0.44742098000000002 -0.23766355 8.23574069999999914 -0.5592435 -0.22845383999999999 7.87523169999999961 0.55548476999999996 -1.05559460000000005"
+		);
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "B8293E37-4B31-4BEB-1E8D-EAAEA8279ECC";
+	rename -uid "EAABD659-45EB-BC88-A4F8-D8B472C7CDB0";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -42.261903082567621 -620.83330866363406 ;
-	setAttr ".tgi[0].vh" -type "double2" 606.54759494558311 36.309522366713026 ;
+	setAttr ".tgi[0].vl" -type "double2" -197.99986412399977 -623.80949902156146 ;
+	setAttr ".tgi[0].vh" -type "double2" 768.23793670286966 35.714284295127563 ;
 	setAttr -s 4 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -23.80952262878418;
-	setAttr ".tgi[0].ni[0].y" -436.58084106445312;
+	setAttr ".tgi[0].ni[0].x" 93.333328247070312;
+	setAttr ".tgi[0].ni[0].y" -138.33332824707031;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 197.61904907226562;
-	setAttr ".tgi[0].ni[1].y" -436.58084106445312;
+	setAttr ".tgi[0].ni[1].x" 338.57144165039062;
+	setAttr ".tgi[0].ni[1].y" -144.28572082519531;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 338.57144165039062;
-	setAttr ".tgi[0].ni[2].y" -144.28572082519531;
+	setAttr ".tgi[0].ni[2].x" 197.61904907226562;
+	setAttr ".tgi[0].ni[2].y" -436.58084106445312;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 93.333328247070312;
-	setAttr ".tgi[0].ni[3].y" -138.33332824707031;
+	setAttr ".tgi[0].ni[3].x" -23.80952262878418;
+	setAttr ".tgi[0].ni[3].y" -436.58084106445312;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
@@ -3462,16 +1829,18 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 5 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 8 ".s";
+	setAttr -s 9 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
+	setAttr -s 2 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 9 ".r";
 select -ne :defaultTextureList1;
+	setAttr -s 2 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -3543,7 +1912,6 @@ connectAttr "unit15_labsSceneRN.phl[4]" "lambert2SG.dsm" -na;
 connectAttr "unit15_labsSceneRN.phl[5]" "lambert2SG.dsm" -na;
 connectAttr "unit15_labsSceneRN.phl[6]" "lambert2SG.dsm" -na;
 connectAttr "unit15_labsSceneRN.phl[7]" "lambert2SG.dsm" -na;
-connectAttr "pillowRN.phl[1]" "lambert2SG.dsm" -na;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert1SG.message" ":defaultLightSet.message";
@@ -3591,13 +1959,13 @@ connectAttr "place2dTexture1.vt3" "Colors_1.vt3";
 connectAttr "place2dTexture1.vc1" "Colors_1.vc1";
 connectAttr "place2dTexture1.o" "Colors_1.uv";
 connectAttr "place2dTexture1.ofs" "Colors_1.fs";
-connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "lambert2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "Colors_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "Colors_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "lambert2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
 connectAttr "Maya_Lambert1SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
