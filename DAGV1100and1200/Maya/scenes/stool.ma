@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: stool.ma
-//Last modified: Fri, Apr 03, 2026 03:15:53 PM
+//Last modified: Fri, Apr 03, 2026 03:15:46 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.4.2";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "DE151300-40F3-B90D-A0E4-6B9E8E830320";
+fileInfo "UUID" "1F9AC5C0-462F-F3C9-46B8-94BD6242D37D";
 createNode transform -s -n "persp";
 	rename -uid "55815BD4-46B5-DE2C-B178-54B84DCDC0CE";
 	setAttr ".v" no;
