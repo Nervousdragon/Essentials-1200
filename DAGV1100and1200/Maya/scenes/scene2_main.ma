@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: scene2_main.ma
-//Last modified: Fri, Apr 24, 2026 03:58:14 PM
+//Last modified: Fri, Apr 24, 2026 04:36:23 PM
 //Codeset: 1252
 file -rdi 1 -ns "stool" -rfn "stoolRN" -op "v=0;" -typ "mayaAscii" "C:/Users/kitan/GitRepos/Essentials/Essentials-1200/DAGV1100and1200/Maya//assets/stool.ma";
 file -rdi 1 -ns "chair" -rfn "chairRN" -op "v=0;" -typ "mayaAscii" "C:/Users/kitan/GitRepos/Essentials/Essentials-1200/DAGV1100and1200/Maya//assets/chair.ma";
@@ -25,17 +25,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "9B863783-4E1A-F1D7-32C3-1CB7012B4273";
+fileInfo "UUID" "BCE3D1B5-46CF-7A6E-41C7-1586DB1C9D60";
 createNode transform -s -n "persp";
 	rename -uid "52D30AEB-48EC-7C3B-74CA-EC84425C876B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 31.042062169962783 16.777821575114984 35.762255458244077 ;
-	setAttr ".r" -type "double3" -14.138352729859148 42.599999999990992 1.0802089619414918e-15 ;
+	setAttr ".t" -type "double3" 29.607194341284181 12.527307018868854 35.503150265097183 ;
+	setAttr ".r" -type "double3" -8.7383527298763095 37.00000000000211 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4E0B879D-46E5-ED19-DE83-9899CE8CA065";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 51.995267410160139;
+	setAttr ".coi" 50.669706021459263;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -98,6 +98,19 @@ createNode transform -n "pCube1";
 createNode mesh -n "pCubeShape1" -p "pCube1";
 	rename -uid "EB1BB2DC-48C2-E810-9CCB-608DCC430711";
 	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.57957091927528381 0.82733523845672607 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode mesh -n "polySurfaceShape2" -p "pCube1";
+	rename -uid "6F68E18E-4AC8-5A8D-F1AF-CAB9C9DC23C9";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -113,6 +126,7 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -143,68 +157,26 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube2";
-	rename -uid "4F092347-4C43-3A5B-AF6D-EABEEDF0BB63";
-	setAttr ".rp" -type "double3" -11.380748374576905 5.8879575936737067 -0.45040396266610472 ;
-	setAttr ".sp" -type "double3" -11.380748374576905 5.8879575936737067 -0.45040396266610472 ;
-createNode mesh -n "pCubeShape2" -p "pCube2";
-	rename -uid "F7433EF8-4715-A8A0-2469-0DB982D626DA";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -10.63638 0.75611711 10.055374 
-		-11.699065 12.022168 10.055374 -11.062431 -0.24625343 10.055374 -12.125116 11.019798 
-		10.055374 -11.062431 -0.24625343 -10.956182 -12.125116 11.019798 -10.956182 -10.63638 
-		0.75611711 -10.956182 -11.699065 12.022168 -10.956182;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube3";
 	rename -uid "CC929F01-4436-6F6C-B2A6-0FB2CFFE315F";
+	setAttr ".t" -type "double3" -0.31089649303306643 0 0 ;
 	setAttr ".rp" -type "double3" -1.1066231141479523 5.859337207761917 -11.185742114146322 ;
 	setAttr ".sp" -type "double3" -1.1066231141479523 5.859337207761917 -11.185742114146322 ;
 createNode mesh -n "pCubeShape3" -p "pCube3";
 	rename -uid "A1765FE4-4422-4F70-D9EA-8980FA383DDA";
 	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.13170940253866437 0.91895518717394031 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode mesh -n "polySurfaceShape1" -p "pCube3";
+	rename -uid "ACA44A62-4349-0A81-AEC0-FF900935C70B";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -5337,7 +5309,6 @@ createNode mesh -n "arcadecabnetShape" -p "arcadecabnet";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -8497,7 +8468,6 @@ createNode mesh -n "arcadecabnet1Shape" -p "arcadecabnet1";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 3 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -8565,7 +8535,7 @@ createNode mesh -n "arcadecabnet1Shape" -p "arcadecabnet1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 100 ".pt[2:99]" -type "float3"  0 0 -1.7881393e-07 0 0 0 
+	setAttr -s 98 ".pt[2:99]" -type "float3"  0 0 -1.7881393e-07 0 0 0 
 		0 0 -5.9604645e-08 0 0 2.3841858e-07 0 0 -5.9604645e-08 0 0 2.3841858e-07 0 0 -1.7881393e-07 
 		0 0 -5.9604645e-08 0 0 2.3841858e-07 0 0 0 0 1.1920929e-07 -1.1920929e-07 0 0 -5.9604645e-08 
 		0 0 2.3841858e-07 0 0 0 0 0 -1.1920929e-07 0 1.1920929e-07 -5.9604645e-08 0 1.1920929e-07 
@@ -11657,7 +11627,6 @@ createNode mesh -n "arcadecabnet2Shape" -p "arcadecabnet2";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -11725,7 +11694,7 @@ createNode mesh -n "arcadecabnet2Shape" -p "arcadecabnet2";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 100 ".pt[12:99]" -type "float3"  0 1.1920929e-07 -4.7683716e-07 
+	setAttr -s 88 ".pt[12:99]" -type "float3"  0 1.1920929e-07 -4.7683716e-07 
 		0 0 0 0 0 0 0 0 0 0 0 -4.7683716e-07 0 1.1920929e-07 0 0 1.1920929e-07 0 0 1.1920929e-07 
 		0 0 0 0 4.7683716e-07 0 0 0 -2.3841858e-07 0 4.7683716e-07 -2.3841858e-07 0 4.7683716e-07 
 		0 0 0 0 -4.7683716e-07 0 0 0 0 -1.1920929e-07 0 0 0 -4.7683716e-07 0 1.1920929e-07 
@@ -14811,7 +14780,6 @@ createNode mesh -n "arcadecabnet3Shape" -p "arcadecabnet3";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 3 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -14879,7 +14847,7 @@ createNode mesh -n "arcadecabnet3Shape" -p "arcadecabnet3";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 100 ".pt[3:99]" -type "float3"  -1.1920929e-07 0 0 0 0 0 
+	setAttr -s 97 ".pt[3:99]" -type "float3"  -1.1920929e-07 0 0 0 0 0 
 		5.9604645e-08 0 0 0 0 0 5.9604645e-08 0 0 0 0 0 0 0 0 5.9604645e-08 0 0 -1.1920929e-07 
 		0 0 0 1.1920929e-07 0 0 0 0 5.9604645e-08 0 0 0 0 0 0 0 0 0 1.1920929e-07 0 5.9604645e-08 
 		1.1920929e-07 0 0 1.1920929e-07 0 0 0 0 0 0 0 0 -2.3841858e-07 0 0 -2.3841858e-07 
@@ -17950,7 +17918,6 @@ createNode mesh -n "arcadecabnet4Shape" -p "arcadecabnet4";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 4 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -18018,7 +17985,7 @@ createNode mesh -n "arcadecabnet4Shape" -p "arcadecabnet4";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 100 ".pt[12:99]" -type "float3"  0 1.1920929e-07 0 0 0 0 0 
+	setAttr -s 88 ".pt[12:99]" -type "float3"  0 1.1920929e-07 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 1.1920929e-07 0 0 1.1920929e-07 0 0 1.1920929e-07 0 0 0 0 0 0 0 
 		0 -2.3841858e-07 0 0 -2.3841858e-07 0 0 0 0 0 0 0 0 0 0 0 -1.1920929e-07 0 0 0 0 
 		0 1.1920929e-07 0 0 0 0 0 0 0 0 -1.1920929e-07 0 0 0 0 0 0 0 0 -2.3841858e-07 0 0 
@@ -21099,7 +21066,6 @@ createNode mesh -n "arcadecabnet5Shape" -p "arcadecabnet5";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 1 "f[44]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 5 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 6 "f[2]" "f[7]" "f[11]" "f[15]" "f[35:38]" "f[49:52]";
@@ -21167,7 +21133,7 @@ createNode mesh -n "arcadecabnet5Shape" -p "arcadecabnet5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 100 ".pt[12:99]" -type "float3"  0 1.1920929e-07 0 0 0 0 0 
+	setAttr -s 88 ".pt[12:99]" -type "float3"  0 1.1920929e-07 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 1.1920929e-07 0 0 1.1920929e-07 0 0 1.1920929e-07 0 0 0 0 0 0 0 
 		0 -2.3841858e-07 0 0 -2.3841858e-07 0 0 0 0 0 0 0 0 0 0 0 -1.1920929e-07 0 0 0 0 
 		0 1.1920929e-07 0 0 0 0 0 0 0 0 -1.1920929e-07 0 0 0 0 0 0 0 4.7683716e-07 -2.3841858e-07 
@@ -24233,16 +24199,132 @@ createNode mesh -n "button2Shape" -p "|arcadecabnet5|button2";
 		151 0 
 		154 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "pCube22";
+	rename -uid "7ED4D001-4D37-245B-DACB-6E9480A8D264";
+	setAttr ".t" -type "double3" -9.7704132984586014 -0.007387989793800287 10.392695074939759 ;
+	setAttr ".r" -type "double3" 0 91.187995012846841 0 ;
+	setAttr ".rp" -type "double3" -1.1066231141479523 5.859337207761917 -11.185742114146322 ;
+	setAttr ".rpt" -type "double3" -1.0658141036401503e-14 0 1.1723955140041653e-13 ;
+	setAttr ".sp" -type "double3" -1.1066231141479523 5.859337207761917 -11.185742114146322 ;
+createNode mesh -n "pCubeShape22" -p "pCube22";
+	rename -uid "47F69A6F-4E15-E5E4-9975-0EBCE5F8010A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.13170940253866437 0.91895518717394031 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 16 ".uvst[0].uvsp[0:15]" -type "float2" 0.22374988 0.86656052
+		 0.22350037 0.9680106 0.21969968 0.96800125 0.21994919 0.86655116 0.21009946 0.74108082
+		 0.2099911 0.84222341 0.20620191 0.84221929 0.20631027 0.74107671 0.21969062 0.97180194
+		 0.039668977 0.97135925 0.039677918 0.9675585 0.026834369 0.74088442 0.026838779 0.7370953
+		 0.20631468 0.73728764 0.039927423 0.86610842 0.026725888 0.84202689;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  9.006398201 0.22529328 -11.29926968 8.94754982 11.5903616 -11.49799156
+		 9.006360054 0.23273793 -10.87349224 8.94751167 11.59780693 -11.072214127 -11.16079617 0.12831262 -10.87349224
+		 -11.21964455 11.49338245 -11.072214127 -11.16075802 0.12086797 -11.29926968 -11.21960545 11.48593616 -11.49799156;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 2 3
+		f 4 1 7 -3 -7
+		mu 0 4 3 2 10 14
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 6 7
+		f 4 3 11 -1 -11
+		mu 0 4 7 6 15 11
+		f 4 -12 -10 -8 -6
+		mu 0 4 8 9 10 2
+		f 4 10 4 6 8
+		mu 0 4 7 11 12 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 6 
+		2 0 
+		3 0 
+		6 0 
+		7 0 
+		10 0 
+		11 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode mesh -n "polySurfaceShape1" -p "pCube22";
+	rename -uid "E63EA3CC-4DBF-3BE0-EEF9-51A9F70153F7";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  9.5063982 0.72529328 -11.79927 
+		8.4475498 12.090362 -11.997992 9.5063601 -0.26726207 -11.373492 8.4475117 11.097807 
+		-11.572214 -10.660796 -0.37168738 -10.373492 -11.719645 10.993382 -10.572214 -10.660758 
+		0.62086797 -10.79927 -11.719605 11.985936 -10.997992;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F52AE1BD-4C04-1915-829B-199F20F7E184";
-	setAttr -s 45 ".lnk";
-	setAttr -s 45 ".slnk";
+	rename -uid "41EDA70D-4B59-18E7-8ED0-478DCA3C495C";
+	setAttr -s 13 ".lnk";
+	setAttr -s 13 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "01701B31-42CD-FC56-4A51-07B2349566A7";
+	rename -uid "D6D59B30-488E-AE3C-A38A-60BB392E7F47";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F16491DA-4599-E813-FED5-9F8D81568D9E";
+	rename -uid "D100F01B-4B4B-7A98-94B6-C0AB3D184BD4";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3DDF1BF8-4C6B-279D-FD6D-4D8B9BED81A5";
+	rename -uid "E5BBBA7C-444B-E829-24BA-62B779B2B339";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 2 ".dli";
@@ -24250,7 +24332,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "CBBBAF92-465F-78BA-1D02-8FB8700D9984";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "3919F714-4FCE-D335-B1E9-BF8BB1176BB9";
+	rename -uid "59A1D26F-4C95-CA12-9BFB-8CBF86EFE45B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "93A152B9-4C20-031F-4ABD-56B68E5219B2";
 	setAttr ".g" yes;
@@ -24270,7 +24352,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1109\n            -height 1132\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1957\n            -height 1044\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -24294,8 +24376,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"motionMakerEditorPanel\" (localizedPanelLabel(\"MotionMaker Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"MotionMaker Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
 		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1109\\n    -height 1132\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1109\\n    -height 1132\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1044\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1044\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -24344,11 +24426,6 @@ createNode reference -n "stoolRN";
 		);
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "0CDB2C6B-4DFE-B620-11F1-1BBF9B086015";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -88.198313860297986 -399.99998410542878 ;
-	setAttr ".tgi[0].vh" -type "double2" 650.10305343697155 44.047617297324038 ;
 createNode reference -n "chairRN";
 	rename -uid "5588062A-4282-F4C7-D310-958469CB7350";
 	setAttr -s 2 ".phl";
@@ -24743,7 +24820,7 @@ createNode reference -n "arcade_cabanetRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"arcade_cabanetRN"
 		"arcade_cabanetRN" 0
-		"arcade_cabanetRN" 1721
+		"arcade_cabanetRN" 658
 		2 "|arcade_cabanet:arcadecabnet" "translate" " -type \"double3\" -9.24073843880639423 1.60261269910815329 5.49584748365878539"
 		
 		2 "|arcade_cabanet:arcadecabnet" "rotate" " -type \"double3\" 0 83.42852949456006684 0"
@@ -24756,208 +24833,11 @@ createNode reference -n "arcade_cabanetRN";
 		
 		2 "|arcade_cabanet:arcadecabnet" "scalePivot" " -type \"double3\" 0.0051450016354444017 2.64835470230770476 -0.073642855388942219"
 		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts" 
-		" -s 100"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[0]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[1]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[2]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[3]" 
-		" -type \"float3\" 0 0 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[4]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[5]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[6]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[7]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[8]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[9]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[10]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[11]" 
-		" -type \"float3\" 0 0 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[12]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[13]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[14]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[15]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[16]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[17]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[18]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[19]" 
-		" -type \"float3\" 4.7683716000000005e-07 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[20]" 
-		" -type \"float3\" 0 0 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[21]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[22]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[23]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[24]" 
-		" -type \"float3\" -4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[25]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[26]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[27]" 
-		" -type \"float3\" 0 -1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[28]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[29]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[30]" 
-		" -type \"float3\" 0 0 -4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[31]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[32]" 
-		" -type \"float3\" 0 -1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[33]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[34]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[35]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[36]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[37]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[38]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[39]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[40]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[41]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[42]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[43]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[44]" 
-		" -type \"float3\" -4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[45]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[46]" 
-		" -type \"float3\" 0 -1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[47]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[48]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[49]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[50]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[51]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[52]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[53]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[54]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[55]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[56]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[57]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[58]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[59]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[60]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[61]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[62]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[63]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[64]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[65]" 
-		" -type \"float3\" 0 0 -4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[66]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[67]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[68]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[69]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 -4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[70]" 
-		" -type \"float3\" -4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[71]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 -4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[72]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[73]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[74]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[75]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[76]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[77]" 
-		" -type \"float3\" 0 1.1920929000000001e-07 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[78]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[79]" 
-		" -type \"float3\" 4.7683716000000005e-07 1.1920929000000001e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[80]" 
-		" -type \"float3\" -4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[81]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[82]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[83]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[84]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[85]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[86]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[87]" 
-		" -type \"float3\" 0 -2.3841858000000002e-07 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[88]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[89]" 
-		" -type \"float3\" 4.7683716000000005e-07 0 -4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[90]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[91]" 
-		" -type \"float3\" 0 0 2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[92]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[93]" 
-		" -type \"float3\" 0 0 4.7683716000000005e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[94]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[95]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[96]" 
-		" -type \"float3\" 0 0 -2.3841858000000002e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[97]" 
-		" -type \"float3\" 0 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[98]" 
-		" -type \"float3\" -4.7683716000000005e-07 0 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pnts[99]" 
-		" -type \"float3\" 0 0 -2.3841858000000002e-07"
+		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:arcadecabnetShape" "pt[0:99]" 
+		(" -s 100 -type \"float3\" 0 0 0 4.7683716000000005e-07 0 0 4.7683716000000005e-07 0 0 0 0 -2.3841858000000002e-07 0 0 4.7683716000000005e-07 0 0 0 0 0 4.7683716000000005e-07 0 0 0 4.7683716000000005e-07 0 0 0 0 4.7683716000000005e-07 0 0 0 0 0 -2.3841858000000002e-07 0 1.1920929000000001e-07 0 0 0 4.7683716000000005e-07 0 0 0 4.7683716000000005e-07 0 0 0 0 0 0 1.1920929000000001e-07 4.7683716000000005e-07 0 1.1920929000000001e-07 0 4.7683716000000005e-07 1.1920929000000001e-07 0 0 0 -2.3841858000000002e-07 0 0 0 0 -2.3841858000000002e-07 -2.3841858000000002e-07 0 -2.3841858000000002e-07 0 -4.7683716000000005e-07 0 0 0 0 0 0 0 2.3841858000000002e-07 0 -1.1920929000000001e-07 0 0 0 2.3841858000000002e-07 0 1.1920929000000001e-07 0 0 0 -4.7683716000000005e-07 4.7683716000000005e-07 0 0 0 -1.1920929000000001e-07 0 0 0 2.3841858000000002e-07 0 0 2.3841858000000002e-07 0 -2.3841858000000002e-07 -2.3841858000000002e-07 0 0 0 0 0 0 0 0 0 0 0 0 0 1.1920929000000001e-07 0 0 0 0 0 0 0 0 1.1920929000000001e-07 0 -4.76837160"
+		+ "00000005e-07 0 0 0 0 0 0 -1.1920929000000001e-07 0 0 0 0 0 0 0 0 -2.3841858000000002e-07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.1920929000000001e-07 0 0 0 0 0 0 0 0 -2.3841858000000002e-07 0 0 0 0 0 -2.3841858000000002e-07 2.3841858000000002e-07 0 0 0 0 1.1920929000000001e-07 0 0 0 2.3841858000000002e-07 0 1.1920929000000001e-07 0 0 0 4.7683716000000005e-07 0 0 -4.7683716000000005e-07 0 0 2.3841858000000002e-07 0 0 0 0 -2.3841858000000002e-07 0 4.7683716000000005e-07 0 -4.7683716000000005e-07 -4.7683716000000005e-07 0 0 0 -2.3841858000000002e-07 -4.7683716000000005e-07 0 0 0 0 0 0 0 1.1920929000000001e-07 0 0 1.1920929000000001e-07 0 0 0 2.3841858000000002e-07 0 1.1920929000000001e-07 2.3841858000000002e-07 4.7683716000000005e-07 0 0 4.7683716000000005e-07 1.1920929000000001e-07 0 -4.7683716000000005e-07 0 0 0 0 0 0 -2.3841858000000002e-07 0 0 -2.3841858000000002e-07 0 0 0 0 0 -2.3841858000000002e-07 0 0 0 0 0 -2.3841858000000002e-07 0 0 0 4.7683716000000005e-07 4.7683716000000005e-07 0 -4.7683716000000005e-07 0 0 2.3"
+		+ "841858000000002e-07 0 0 2.3841858000000002e-07 0 0 0 0 0 4.7683716000000005e-07 0 0 0 0 0 0 0 0 -2.3841858000000002e-07 0 0 0 -4.7683716000000005e-07 0 0 0 0 -2.3841858000000002e-07"
+		)
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot" "rotatePivot" " -type \"double3\" 0.0051450016354444017 1.55997072414809912 1.22817689132047114"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot" "scalePivot" " -type \"double3\" 0.0051450016354444017 1.55997072414809912 1.22817689132047114"
@@ -25223,266 +25103,6 @@ createNode reference -n "arcade_cabanetRN";
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
 		"pnts[128]" " -type \"float3\" 0 1.7136335e-07 2.9802322e-07"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" 0 1.7136335e-07 2.9802322e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
-		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:coinslot|arcade_cabanet:coinslotShape" 
 		"pnts[129]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick" "rotatePivot" " -type \"double3\" -0.40353172183549224 2.87573420968351723 1.5298042111498904"
 		
@@ -25493,841 +25113,21 @@ createNode reference -n "arcade_cabanetRN";
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
 		"uvSet[0].uvSetPoints" " -s 327"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[0]" " -type \"float2\" 0.19317757999999999 0.96828592000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[1]" " -type \"float2\" 0.18554851 0.96834803000000003"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[2]" " -type \"float2\" 0.18547881999999999 0.95978165000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[3]" " -type \"float2\" 0.1931079 0.95971960000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[4]" " -type \"float2\" 0.17949411000000001 0.96839726000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[5]" " -type \"float2\" 0.17942437999999999 0.95983094000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[6]" " -type \"float2\" 0.20163450999999999 0.96821707000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[7]" " -type \"float2\" 0.20156479999999999 0.95965075"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[8]" " -type \"float2\" 0.21009137 0.96814829000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[9]" " -type \"float2\" 0.21002162999999999 0.95958191000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[10]" " -type \"float2\" 0.21772048999999999 0.96808618000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[11]" " -type \"float2\" 0.21765085000000001 0.95951986"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[12]" " -type \"float2\" 0.22377503000000001 0.96803695000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[13]" " -type \"float2\" 0.22370535 0.95947057000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[14]" " -type \"float2\" 0.29417357 0.96746403000000003"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[15]" " -type \"float2\" 0.28654449999999998 0.96752607999999996"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[16]" " -type \"float2\" 0.28647478999999998 0.95895976000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[17]" " -type \"float2\" 0.29410385999999999 0.95889771000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[18]" " -type \"float2\" 0.27808756000000001 0.96759492000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[19]" " -type \"float2\" 0.27801785000000001 0.95902860000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[20]" " -type \"float2\" 0.30022797000000001 0.96741474000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[21]" " -type \"float2\" 0.30015828999999999 0.95884842000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[22]" " -type \"float2\" 0.26963079000000001 0.96766375999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[23]" " -type \"float2\" 0.26956105000000002 0.95909739000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[24]" " -type \"float2\" 0.26200157000000002 0.96772586999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[25]" " -type \"float2\" 0.26193187000000001 0.95915949"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[26]" " -type \"float2\" 0.25594707999999999 0.96777511000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[27]" " -type \"float2\" 0.25587737999999999 0.95920879000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[28]" " -type \"float2\" 0.037094771999999998 0.69782043000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[29]" " -type \"float2\" 0.041612565999999997 0.69782036999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[30]" " -type \"float2\" 0.041612863999999999 0.80466831000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[31]" " -type \"float2\" 0.037095070000000001 0.80466831000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[32]" " -type \"float2\" 0.045198022999999997 0.69782036999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[33]" " -type \"float2\" 0.045198440999999999 0.80466831000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[34]" " -type \"float2\" 0.041612923000000003 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[35]" " -type \"float2\" 0.14090003000000001 0.13258779000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[36]" " -type \"float2\" 0.032086669999999998 0.69782043000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[37]" " -type \"float2\" 0.032086968 0.80466831000000005"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[38]" " -type \"float2\" 0.045198500000000003 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[39]" " -type \"float2\" 0.15049924000000001 0.14952304999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[40]" " -type \"float2\" 0.14234728999999999 0.14982187999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[41]" " -type \"float2\" 0.13564192999999999 0.13279732999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[42]" " -type \"float2\" 0.027078629 0.69782043000000005"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[43]" " -type \"float2\" 0.027078985999999999 0.80466837000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[44]" " -type \"float2\" 0.14281687000000001 0.15728571"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[45]" " -type \"float2\" 0.15189214000000001 0.15727902999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[46]" " -type \"float2\" 0.13423959999999999 0.14970568000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[47]" " -type \"float2\" 0.1305432 0.13249058999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[48]" " -type \"float2\" 0.022560775000000002 0.69782043000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[49]" " -type \"float2\" 0.022561490999999999 0.80466837000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[50]" " -type \"float2\" 0.13389577 0.15700207999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[51]" " -type \"float2\" 0.15853463000000001 0.14772004999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[52]" " -type \"float2\" 0.16116743 0.15689307"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[53]" " -type \"float2\" 0.15114532 0.17836578"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[54]" " -type \"float2\" 0.14212437 0.17752035999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[55]" " -type \"float2\" 0.12600707999999999 0.14906430000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[56]" " -type \"float2\" 0.12584645999999999 0.13168107000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[57]" " -type \"float2\" 0.018975377000000002 0.69782043000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[58]" " -type \"float2\" 0.018975377000000002 0.80466837000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[59]" " -type \"float2\" 0.13309198999999999 0.17697727999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[60]" " -type \"float2\" 0.12495004 0.15638748999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[61]" " -type \"float2\" 0.16017245999999999 0.17959691999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[62]" " -type \"float2\" 0.14893319999999999 0.18512839"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[63]" " -type \"float2\" 0.14093414000000001 0.18428433"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[64]" " -type \"float2\" 0.11771104 0.14781925000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[65]" " -type \"float2\" 0.018975556000000001 0.82716244000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[66]" " -type \"float2\" 0.13281921999999999 0.18379253000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[67]" " -type \"float2\" 0.12404777 0.17669272"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[68]" " -type \"float2\" 0.1158734 0.15538867000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[69]" " -type \"float2\" 0.15649056 0.18687743000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[70]" " -type \"float2\" 0.12469516999999999 0.18353920000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[71]" " -type \"float2\" 0.11499794000000001 0.17672758"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[72]" " -type \"float2\" 0.10697204 0.15428269"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[73]" " -type \"float2\" 0.18858604000000001 0.20582238"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[74]" " -type \"float2\" 0.11666399 0.18366697000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[75]" " -type \"float2\" 0.10593002999999999 0.17720830000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[76]" " -type \"float2\" 0.10900517 0.18478132999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[77]" " -type \"float2\" 0.067835271000000003 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[78]" " -type \"float2\" 0.072353184000000001 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[79]" " -type \"float2\" 0.072352707000000002 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[80]" " -type \"float2\" 0.067835271000000003 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[81]" " -type \"float2\" 0.077361165999999995 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[82]" " -type \"float2\" 0.077361763 0.80466819000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[83]" " -type \"float2\" 0.055710267000000001 0.14797428000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[84]" " -type \"float2\" 0.050705235000000001 0.14821428"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[85]" " -type \"float2\" 0.064249814000000002 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[86]" " -type \"float2\" 0.064250111999999998 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[87]" " -type \"float2\" 0.082369149000000003 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[88]" " -type \"float2\" 0.082368672000000004 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[89]" " -type \"float2\" 0.060655948000000001 0.14841264000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[90]" " -type \"float2\" 0.052650068000000001 0.16422433"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[91]" " -type \"float2\" 0.045374360000000002 0.16335491999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[92]" " -type \"float2\" 0.064250111999999998 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[93]" " -type \"float2\" 0.086887120999999998 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[94]" " -type \"float2\" 0.086887120999999998 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[95]" " -type \"float2\" 0.065641328999999998 0.14827315999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[96]" " -type \"float2\" 0.060116965000000001 0.16458547000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[97]" " -type \"float2\" 0.043474469000000002 0.17045505"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[98]" " -type \"float2\" 0.051760476 0.17111357999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[99]" " -type \"float2\" 0.090472340999999998 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[100]" " -type \"float2\" 0.090472638999999994 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[101]" " -type \"float2\" 0.086887120999999998 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[102]" " -type \"float2\" 0.067551836000000004 0.16452501999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[103]" " -type \"float2\" 0.059954884999999999 0.17142934000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[104]" " -type \"float2\" 0.035137097999999999 0.16955092999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[105]" " -type \"float2\" 0.11171518 0.096785321999999993"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[106]" " -type \"float2\" 0.051191207000000002 0.18987364000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[107]" " -type \"float2\" 0.042851906000000002 0.19007884999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[108]" " -type \"float2\" 0.090472638999999994 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[109]" " -type \"float2\" 0.075061783000000007 0.16410933"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[110]" " -type \"float2\" 0.068150967000000007 0.1714948"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[111]" " -type \"float2\" 0.059523296000000003 0.18995619"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[112]" " -type \"float2\" 0.034473563999999998 0.19066643999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[113]" " -type \"float2\" 0.051885652999999997 0.1961937"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[114]" " -type \"float2\" 0.044484365999999997 0.19646329000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[115]" " -type \"float2\" 0.076514690999999996 0.17132421"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[116]" " -type \"float2\" 0.067852317999999995 0.19028740999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[117]" " -type \"float2\" 0.059370900999999997 0.19626689"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[118]" " -type \"float2\" 0.037422302999999997 0.19761674000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[119]" " -type \"float2\" 0.082461386999999997 0.16231962999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[120]" " -type \"float2\" 0.085079326999999996 0.17082327999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[121]" " -type \"float2\" 0.076188326000000001 0.19091383000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[122]" " -type \"float2\" 0.066853314999999996 0.19656709"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[123]" " -type \"float2\" 0.084548904999999994 0.19191378000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[124]" " -type \"float2\" 0.074245601999999994 0.19720805999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[125]" " -type \"float2\" 0.081254408 0.19870861000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[126]" " -type \"float2\" 0.27859678999999998 0.84083675999999996"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[127]" " -type \"float2\" 0.28271815 0.84892535000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[128]" " -type \"float2\" 0.25512284000000002 0.85789156"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[129]" " -type \"float2\" 0.28413817000000002 0.85789156"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[130]" " -type \"float2\" 0.27217764 0.83441770000000004"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[131]" " -type \"float2\" 0.28271805999999999 0.86685783000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[132]" " -type \"float2\" 0.26408907999999998 0.83029633999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[133]" " -type \"float2\" 0.27859678999999998 0.87494642"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[134]" " -type \"float2\" 0.25512284000000002 0.82887619999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[135]" " -type \"float2\" 0.27217764 0.88136554"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[136]" " -type \"float2\" 0.24615659000000001 0.83029633999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[137]" " -type \"float2\" 0.26408907999999998 0.88548671999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[138]" " -type \"float2\" 0.23806803000000001 0.83441770000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[139]" " -type \"float2\" 0.25512284000000002 0.88690692000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[140]" " -type \"float2\" 0.23164894999999999 0.84083675999999996"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[141]" " -type \"float2\" 0.24615659000000001 0.88548671999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[142]" " -type \"float2\" 0.2275276 0.84892535000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[143]" " -type \"float2\" 0.23806803000000001 0.88136554"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[144]" " -type \"float2\" 0.22610751000000001 0.85789156"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[145]" " -type \"float2\" 0.23164894999999999 0.87494642"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[146]" " -type \"float2\" 0.2275276 0.86685783000000005"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[147]" " -type \"float2\" 0.21259819999999999 0.86217695000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[148]" " -type \"float2\" 0.20725826999999999 0.87265711999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[149]" " -type \"float2\" 0.18570262000000001 0.85699605999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[150]" " -type \"float2\" 0.18725795000000001 0.85394347000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[151]" " -type \"float2\" 0.19894113999999999 0.88097422999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[152]" " -type \"float2\" 0.18328001999999999 0.85941862999999996"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[153]" " -type \"float2\" 0.21443817000000001 0.85055952999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[154]" " -type \"float2\" 0.18779391000000001 0.85055952999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[155]" " -type \"float2\" 0.18846096000000001 0.88631420999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[156]" " -type \"float2\" 0.18022741 0.86097389000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[157]" " -type \"float2\" 0.21259815000000001 0.83894217000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[158]" " -type \"float2\" 0.18725795000000001 0.84717571999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[159]" " -type \"float2\" 0.17684357000000001 0.88815414999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[160]" " -type \"float2\" 0.17684357000000001 0.86150992000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[161]" " -type \"float2\" 0.20725825 0.828462"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[162]" " -type \"float2\" 0.18570255999999999 0.84412306999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[163]" " -type \"float2\" 0.16522618 0.88631420999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[164]" " -type \"float2\" 0.17345974 0.86097389000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[165]" " -type \"float2\" 0.19894113999999999 0.82014483000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[166]" " -type \"float2\" 0.18328001999999999 0.84170054999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[167]" " -type \"float2\" 0.154746 0.88097422999999997"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[168]" " -type \"float2\" 0.17040712 0.85941862999999996"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[169]" " -type \"float2\" 0.18846096000000001 0.81480503000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[170]" " -type \"float2\" 0.18022741 0.84014522999999997"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[171]" " -type \"float2\" 0.14642893000000001 0.87265711999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[172]" " -type \"float2\" 0.16798456 0.85699605999999995"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[173]" " -type \"float2\" 0.17684357000000001 0.81296491999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[174]" " -type \"float2\" 0.17684357000000001 0.83960915000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[175]" " -type \"float2\" 0.14108899 0.86217695000000005"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[176]" " -type \"float2\" 0.16642915999999999 0.85394334999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[177]" " -type \"float2\" 0.16522619 0.81480503000000004"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[178]" " -type \"float2\" 0.17345974 0.84014522999999997"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[179]" " -type \"float2\" 0.13924897 0.85055952999999995"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[180]" " -type \"float2\" 0.16589323 0.85055952999999995"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[181]" " -type \"float2\" 0.154746 0.82014483000000005"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[182]" " -type \"float2\" 0.17040712 0.84170060999999996"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[183]" " -type \"float2\" 0.14108899 0.83894217000000004"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[184]" " -type \"float2\" 0.16642915999999999 0.84717571999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[185]" " -type \"float2\" 0.14642893000000001 0.828462"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[186]" " -type \"float2\" 0.16798456 0.84412306999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[187]" " -type \"float2\" 0.083593026000000001 0.23705303999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[188]" " -type \"float2\" 0.071859940999999997 0.23324057000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[189]" " -type \"float2\" 0.072472184999999995 0.22937509"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[190]" " -type \"float2\" 0.084809079999999995 0.22937509"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[191]" " -type \"float2\" 0.080063909000000003 0.24397870999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[192]" " -type \"float2\" 0.070083155999999994 0.23672741999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[193]" " -type \"float2\" 0.059963572999999999 0.22937509"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[194]" " -type \"float2\" 0.071859940999999997 0.22550972999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[195]" " -type \"float2\" 0.083593026000000001 0.221697"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[196]" " -type \"float2\" 0.074567541000000001 0.24947575"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[197]" " -type \"float2\" 0.067315727000000006 0.23949509999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[198]" " -type \"float2\" 0.070083186000000006 0.22202327999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[199]" " -type \"float2\" 0.080063850000000006 0.21477189999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[200]" " -type \"float2\" 0.080541327999999995 0.13777101"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[201]" " -type \"float2\" 0.063829169000000005 0.24127161999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[202]" " -type \"float2\" 0.067315593000000007 0.21925527"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[203]" " -type \"float2\" 0.18489583000000001 0.25124547000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[204]" " -type \"float2\" 0.068484544999999994 0.13073328000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[205]" " -type \"float2\" 0.079256832999999999 0.129795"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[206]" " -type \"float2\" 0.089482486 0.13784552"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[207]" " -type \"float2\" 0.059963572999999999 0.24188377999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[208]" " -type \"float2\" 0.063829169000000005 0.21747859999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[209]" " -type \"float2\" 0.17703057999999999 0.24850633999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[210]" " -type \"float2\" 0.089975566000000007 0.12992730999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[211]" " -type \"float2\" 0.098183601999999995 0.13911079000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[212]" " -type \"float2\" 0.056098233999999997 0.24127144"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[213]" " -type \"float2\" 0.059963244999999998 0.21686652000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[214]" " -type \"float2\" 0.16881219 0.24746810999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[215]" " -type \"float2\" 0.17933983000000001 0.24078667000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[216]" " -type \"float2\" 0.18959597 0.24307126000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[217]" " -type \"float2\" 0.10050713999999999 0.13126289999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[218]" " -type \"float2\" 0.10635197 0.14187016"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[219]" " -type \"float2\" 0.052611421999999998 0.23949465"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[220]" " -type \"float2\" 0.056097980999999998 0.21747842000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[221]" " -type \"float2\" 0.16031015000000001 0.24807145999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[222]" " -type \"float2\" 0.16875891000000001 0.23986979999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[223]" " -type \"float2\" 0.11078766 0.13377132"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[224]" " -type \"float2\" 0.039863299999999997 0.24397916"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[225]" " -type \"float2\" 0.049843904000000001 0.23672741999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[226]" " -type \"float2\" 0.052611421999999998 0.21925512"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[227]" " -type \"float2\" 0.045359443999999999 0.20927459000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[228]" " -type \"float2\" 0.15811418999999999 0.24048591"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[229]" " -type \"float2\" 0.036334109000000003 0.23705313"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[230]" " -type \"float2\" 0.048067275 0.23324063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[231]" " -type \"float2\" 0.049844157 0.22202271000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[232]" " -type \"float2\" 0.039863136 0.21477139000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[233]" " -type \"float2\" 0.14763482999999999 0.24243501000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[234]" " -type \"float2\" 0.035118069000000002 0.22937450000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[235]" " -type \"float2\" 0.047455002000000003 0.22937477000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[236]" " -type \"float2\" 0.048067170999999999 0.22551033000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[237]" " -type \"float2\" 0.036334109000000003 0.22169792999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[238]" " -type \"float2\" 0.14583831999999999 0.1327091"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[239]" " -type \"float2\" 0.083561554999999996 0.075332597000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[240]" " -type \"float2\" 0.088187844000000001 0.077671900000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[241]" " -type \"float2\" 0.082294076999999993 0.096907048999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[242]" " -type \"float2\" 0.093406885999999995 0.078740478000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[243]" " -type \"float2\" 0.092203437999999999 0.098291828999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[244]" " -type \"float2\" 0.098810643000000004 0.078448817000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[245]" " -type \"float2\" 0.10212873 0.098219976000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[246]" " -type \"float2\" 0.046137500999999997 0.14745839999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[247]" " -type \"float2\" 0.070275544999999995 0.14838108"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[248]" " -type \"float2\" 0.16018224 0.18601249"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[249]" " -type \"float2\" 0.16450662999999999 0.18849482000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[250]" " -type \"float2\" 0.15917371 0.20768877999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[251]" " -type \"float2\" 0.16950762 0.18957168999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[252]" " -type \"float2\" 0.16913131000000001 0.20874327000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[253]" " -type \"float2\" 0.17467445000000001 0.18900971"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[254]" " -type \"float2\" 0.17909106999999999 0.20808457999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[255]" " -type \"float2\" 0.12224955999999999 0.12911929"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[256]" " -type \"float2\" 0.17186502000000001 0.96845937000000004"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[257]" " -type \"float2\" 0.17179531000000001 0.95989298999999995"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[258]" " -type \"float2\" 0.1634081 0.96852821"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[259]" " -type \"float2\" 0.16333835999999999 0.95996183000000002"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[260]" " -type \"float2\" 0.15495117 0.96859704999999996"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[261]" " -type \"float2\" 0.15488147999999999 0.96003066999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[262]" " -type \"float2\" 0.14732216000000001 0.9686591"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[263]" " -type \"float2\" 0.14725244000000001 0.96009272000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[264]" " -type \"float2\" 0.24831802 0.96783721"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[265]" " -type \"float2\" 0.24824831 0.95927083000000002"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[266]" " -type \"float2\" 0.23986107000000001 0.967906"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[267]" " -type \"float2\" 0.23979133 0.95933968000000003"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[268]" " -type \"float2\" 0.23140416 0.96797484"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[269]" " -type \"float2\" 0.23133443000000001 0.95940851999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[270]" " -type \"float2\" 0.049715876999999999 0.69782036999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[271]" " -type \"float2\" 0.049716055000000002 0.80466831000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[272]" " -type \"float2\" 0.054723918000000003 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[273]" " -type \"float2\" 0.054724692999999998 0.80466824999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[274]" " -type \"float2\" 0.049716175000000001 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[275]" " -type \"float2\" 0.059732019999999997 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[276]" " -type \"float2\" 0.059732436999999999 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[277]" " -type \"float2\" 0.054724753000000001 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[278]" " -type \"float2\" 0.059732555999999999 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[279]" " -type \"float2\" 0.094990194 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[280]" " -type \"float2\" 0.094990134000000004 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[281]" " -type \"float2\" 0.099998236000000004 0.69782031"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[282]" " -type \"float2\" 0.099998534 0.80466819000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[283]" " -type \"float2\" 0.094990194 0.82716226999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[284]" " -type \"float2\" 0.10500627999999999 0.69782025000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[285]" " -type \"float2\" 0.10500681000000001 0.80466819000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[286]" " -type \"float2\" 0.099998534 0.82716226999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[287]" " -type \"float2\" 0.10952413 0.69782025000000003"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[288]" " -type \"float2\" 0.10952401 0.80466819000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[289]" " -type \"float2\" 0.10500687 0.82716226999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[290]" " -type \"float2\" 0.10952407 0.82716221000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[291]" " -type \"float2\" 0.069849177999999998 0.10437146999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[292]" " -type \"float2\" 0.072692320000000005 0.094010800000000005"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[293]" " -type \"float2\" 0.080473482999999998 0.10570498"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[294]" " -type \"float2\" 0.091407328999999996 0.10675082"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[295]" " -type \"float2\" 0.10252789 0.10723057"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[296]" " -type \"float2\" 0.11370872 0.10737173"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[297]" " -type \"float2\" 0.14708420999999999 0.21588001000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[298]" " -type \"float2\" 0.14950942 0.20519397"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[299]" " -type \"float2\" 0.15779951 0.21652447999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[300]" " -type \"float2\" 0.16891138 0.21698365"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[301]" " -type \"float2\" 0.18015739 0.21690539"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[302]" " -type \"float2\" 0.191203 0.21646923000000001"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[303]" " -type \"float2\" 0.17952314 0.18674532999999999"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[304]" " -type \"float2\" 0.10987876000000001 0.14421340999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[305]" " -type \"float2\" 0.032087027999999997 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[306]" " -type \"float2\" 0.037095128999999998 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[307]" " -type \"float2\" 0.027079045999999999 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[308]" " -type \"float2\" 0.022561788999999999 0.82716237999999997"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[309]" " -type \"float2\" 0.15035995999999999 0.13193474999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[310]" " -type \"float2\" 0.082368672000000004 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[311]" " -type \"float2\" 0.077361763 0.82716226999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[312]" " -type \"float2\" 0.072352707000000002 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[313]" " -type \"float2\" 0.067835271000000003 0.82716226999999998"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[314]" " -type \"float2\" 0.074466436999999996 0.14762011"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[315]" " -type \"float2\" 0.10401006 0.076710358000000006"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[316]" " -type \"float2\" 0.038147914999999998 0.16107450000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[317]" " -type \"float2\" 0.067641452000000005 0.20574516000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[318]" " -type \"float2\" 0.074567764999999994 0.20927494999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[319]" " -type \"float2\" 0.059963311999999998 0.20452982"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[320]" " -type \"float2\" 0.052285920999999999 0.20574509999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[321]" " -type \"float2\" 0.15179455 0.25104465999999998"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[322]" " -type \"float2\" 0.052285592999999998 0.25300449000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[323]" " -type \"float2\" 0.045359972999999998 0.24947542"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[324]" " -type \"float2\" 0.059963311999999998 0.25422069000000003"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[325]" " -type \"float2\" 0.067641391999999995 0.25300476"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"uvSet[0].uvSetPoints[326]" " -type \"float2\" 0.071488798000000006 0.13948926"
+		"uvst[0].uvsp[0:249]" (" -type \"float2\" 0.19317757999999999 0.96828592000000002 0.18554851 0.96834803000000003 0.18547881999999999 0.95978165000000004 0.1931079 0.95971960000000001 0.17949411000000001 0.96839726000000004 0.17942437999999999 0.95983094000000002 0.20163450999999999 0.96821707000000001 0.20156479999999999 0.95965075 0.21009137 0.96814829000000002 0.21002162999999999 0.95958191000000004 0.21772048999999999 0.96808618000000002 0.21765085000000001 0.95951986 0.22377503000000001 0.96803695000000001 0.22370535 0.95947057000000002 0.29417357 0.96746403000000003 0.28654449999999998 0.96752607999999996 0.28647478999999998 0.95895976000000005 0.29410385999999999 0.95889771000000001 0.27808756000000001 0.96759492000000002 0.27801785000000001 0.95902860000000001 0.30022797000000001 0.96741474000000005 0.30015828999999999 0.95884842000000003 0.26963079000000001 0.96766375999999998 0.26956105000000002 0.95909739000000005 0.26200157000000002 0.96772586999999999 0.26193187000000001 0.95915949 0.25594707999999999 0.96777511000000005 0"
+		+ ".25587737999999999 0.95920879000000003 0.037094771999999998 0.69782043000000005 0.041612565999999997 0.69782036999999997 0.041612863999999999 0.80466831000000005 0.037095070000000001 0.80466831000000005 0.045198022999999997 0.69782036999999997 0.045198440999999999 0.80466831000000005 0.041612923000000003 0.82716237999999997 0.14090003000000001 0.13258779000000001 0.032086669999999998 0.69782043000000005 0.032086968 0.80466831000000005 0.045198500000000003 0.82716237999999997 0.15049924000000001 0.14952304999999999 0.14234728999999999 0.14982187999999999 0.13564192999999999 0.13279732999999999 0.027078629 0.69782043000000005 0.027078985999999999 0.80466837000000002 0.14281687000000001 0.15728571 0.15189214000000001 0.15727902999999999 0.13423959999999999 0.14970568000000001 0.1305432 0.13249058999999999 0.022560775000000002 0.69782043000000005 0.022561490999999999 0.80466837000000002 0.13389577 0.15700207999999999 0.15853463000000001 0.14772004999999999 0.16116743 0.15689307 0.15114532 0.17836578 0.14212437 0."
+		+ "17752035999999999 0.12600707999999999 0.14906430000000001 0.12584645999999999 0.13168107000000001 0.018975377000000002 0.69782043000000005 0.018975377000000002 0.80466837000000002 0.13309198999999999 0.17697727999999999 0.12495004 0.15638748999999999 0.16017245999999999 0.17959691999999999 0.14893319999999999 0.18512839 0.14093414000000001 0.18428433 0.11771104 0.14781925000000001 0.018975556000000001 0.82716244000000005 0.13281921999999999 0.18379253000000001 0.12404777 0.17669272 0.1158734 0.15538867000000001 0.15649056 0.18687743000000001 0.12469516999999999 0.18353920000000001 0.11499794000000001 0.17672758 0.10697204 0.15428269 0.18858604000000001 0.20582238 0.11666399 0.18366697000000001 0.10593002999999999 0.17720830000000001 0.10900517 0.18478132999999999 0.067835271000000003 0.69782031 0.072353184000000001 0.69782031 0.072352707000000002 0.80466819000000001 0.067835271000000003 0.80466819000000001 0.077361165999999995 0.69782031 0.077361763 0.80466819000000001 0.055710267000000001 0.14797428000000001"
+		+ " 0.050705235000000001 0.14821428 0.064249814000000002 0.69782031 0.064250111999999998 0.80466819000000001 0.082369149000000003 0.69782031 0.082368672000000004 0.80466819000000001 0.060655948000000001 0.14841264000000001 0.052650068000000001 0.16422433 0.045374360000000002 0.16335491999999999 0.064250111999999998 0.82716226999999998 0.086887120999999998 0.69782031 0.086887120999999998 0.80466819000000001 0.065641328999999998 0.14827315999999999 0.060116965000000001 0.16458547000000001 0.043474469000000002 0.17045505 0.051760476 0.17111357999999999 0.090472340999999998 0.69782031 0.090472638999999994 0.80466819000000001 0.086887120999999998 0.82716226999999998 0.067551836000000004 0.16452501999999999 0.059954884999999999 0.17142934000000001 0.035137097999999999 0.16955092999999999 0.11171518 0.096785321999999993 0.051191207000000002 0.18987364000000001 0.042851906000000002 0.19007884999999999 0.090472638999999994 0.82716226999999998 0.075061783000000007 0.16410933 0.068150967000000007 0.1714948 0.05952329600000"
+		+ "0003 0.18995619 0.034473563999999998 0.19066643999999999 0.051885652999999997 0.1961937 0.044484365999999997 0.19646329000000001 0.076514690999999996 0.17132421 0.067852317999999995 0.19028740999999999 0.059370900999999997 0.19626689 0.037422302999999997 0.19761674000000001 0.082461386999999997 0.16231962999999999 0.085079326999999996 0.17082327999999999 0.076188326000000001 0.19091383000000001 0.066853314999999996 0.19656709 0.084548904999999994 0.19191378000000001 0.074245601999999994 0.19720805999999999 0.081254408 0.19870861000000001 0.27859678999999998 0.84083675999999996 0.28271815 0.84892535000000002 0.25512284000000002 0.85789156 0.28413817000000002 0.85789156 0.27217764 0.83441770000000004 0.28271805999999999 0.86685783000000005 0.26408907999999998 0.83029633999999997 0.27859678999999998 0.87494642 0.25512284000000002 0.82887619999999995 0.27217764 0.88136554 0.24615659000000001 0.83029633999999997 0.26408907999999998 0.88548671999999995 0.23806803000000001 0.83441770000000004 0.25512284000000002 0.8"
+		+ "8690692000000004 0.23164894999999999 0.84083675999999996 0.24615659000000001 0.88548671999999995 0.2275276 0.84892535000000002 0.23806803000000001 0.88136554 0.22610751000000001 0.85789156 0.23164894999999999 0.87494642 0.2275276 0.86685783000000005 0.21259819999999999 0.86217695000000005 0.20725826999999999 0.87265711999999995 0.18570262000000001 0.85699605999999995 0.18725795000000001 0.85394347000000004 0.19894113999999999 0.88097422999999997 0.18328001999999999 0.85941862999999996 0.21443817000000001 0.85055952999999995 0.18779391000000001 0.85055952999999995 0.18846096000000001 0.88631420999999999 0.18022741 0.86097389000000002 0.21259815000000001 0.83894217000000004 0.18725795000000001 0.84717571999999997 0.17684357000000001 0.88815414999999998 0.17684357000000001 0.86150992000000004 0.20725825 0.828462 0.18570255999999999 0.84412306999999998 0.16522618 0.88631420999999999 0.17345974 0.86097389000000002 0.19894113999999999 0.82014483000000005 0.18328001999999999 0.84170054999999999 0.154746 0.8809742299"
+		+ "9999997 0.17040712 0.85941862999999996 0.18846096000000001 0.81480503000000004 0.18022741 0.84014522999999997 0.14642893000000001 0.87265711999999995 0.16798456 0.85699605999999995 0.17684357000000001 0.81296491999999998 0.17684357000000001 0.83960915000000003 0.14108899 0.86217695000000005 0.16642915999999999 0.85394334999999999 0.16522619 0.81480503000000004 0.17345974 0.84014522999999997 0.13924897 0.85055952999999995 0.16589323 0.85055952999999995 0.154746 0.82014483000000005 0.17040712 0.84170060999999996 0.14108899 0.83894217000000004 0.16642915999999999 0.84717571999999997 0.14642893000000001 0.828462 0.16798456 0.84412306999999998 0.083593026000000001 0.23705303999999999 0.071859940999999997 0.23324057000000001 0.072472184999999995 0.22937509 0.084809079999999995 0.22937509 0.080063909000000003 0.24397870999999999 0.070083155999999994 0.23672741999999999 0.059963572999999999 0.22937509 0.071859940999999997 0.22550972999999999 0.083593026000000001 0.221697 0.074567541000000001 0.24947575 0.067315727000"
+		+ "000006 0.23949509999999999 0.070083186000000006 0.22202327999999999 0.080063850000000006 0.21477189999999999 0.080541327999999995 0.13777101 0.063829169000000005 0.24127161999999999 0.067315593000000007 0.21925527 0.18489583000000001 0.25124547000000003 0.068484544999999994 0.13073328000000001 0.079256832999999999 0.129795 0.089482486 0.13784552 0.059963572999999999 0.24188377999999999 0.063829169000000005 0.21747859999999999 0.17703057999999999 0.24850633999999999 0.089975566000000007 0.12992730999999999 0.098183601999999995 0.13911079000000001 0.056098233999999997 0.24127144 0.059963244999999998 0.21686652000000001 0.16881219 0.24746810999999999 0.17933983000000001 0.24078667000000001 0.18959597 0.24307126000000001 0.10050713999999999 0.13126289999999999 0.10635197 0.14187016 0.052611421999999998 0.23949465 0.056097980999999998 0.21747842000000001 0.16031015000000001 0.24807145999999999 0.16875891000000001 0.23986979999999999 0.11078766 0.13377132 0.039863299999999997 0.24397916 0.049843904000000001 0.23672"
+		+ "741999999999 0.052611421999999998 0.21925512 0.045359443999999999 0.20927459000000001 0.15811418999999999 0.24048591 0.036334109000000003 0.23705313 0.048067275 0.23324063 0.049844157 0.22202271000000001 0.039863136 0.21477139000000001 0.14763482999999999 0.24243501000000001 0.035118069000000002 0.22937450000000001 0.047455002000000003 0.22937477000000001 0.048067170999999999 0.22551033000000001 0.036334109000000003 0.22169792999999999 0.14583831999999999 0.1327091 0.083561554999999996 0.075332597000000001 0.088187844000000001 0.077671900000000002 0.082294076999999993 0.096907048999999995 0.093406885999999995 0.078740478000000003 0.092203437999999999 0.098291828999999997 0.098810643000000004 0.078448817000000004 0.10212873 0.098219976000000001 0.046137500999999997 0.14745839999999999 0.070275544999999995 0.14838108 0.16018224 0.18601249 0.16450662999999999 0.18849482000000001"
+		)
+		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
+		"uvst[0].uvsp[250:326]" (" 0.15917371 0.20768877999999999 0.16950762 0.18957168999999999 0.16913131000000001 0.20874327000000001 0.17467445000000001 0.18900971 0.17909106999999999 0.20808457999999999 0.12224955999999999 0.12911929 0.17186502000000001 0.96845937000000004 0.17179531000000001 0.95989298999999995 0.1634081 0.96852821 0.16333835999999999 0.95996183000000002 0.15495117 0.96859704999999996 0.15488147999999999 0.96003066999999997 0.14732216000000001 0.9686591 0.14725244000000001 0.96009272000000001 0.24831802 0.96783721 0.24824831 0.95927083000000002 0.23986107000000001 0.967906 0.23979133 0.95933968000000003 0.23140416 0.96797484 0.23133443000000001 0.95940851999999999 0.049715876999999999 0.69782036999999997 0.049716055000000002 0.80466831000000005 0.054723918000000003 0.69782031 0.054724692999999998 0.80466824999999997 0.049716175000000001 0.82716237999999997 0.059732019999999997 0.69782031 0.059732436999999999 0.80466819000000001 0.054724753000000001 0.82716226999999998 0.059732555999999999 0.82716226999999998 0.094990194"
+		+ " 0.69782031 0.094990134000000004 0.80466819000000001 0.099998236000000004 0.69782031 0.099998534 0.80466819000000001 0.094990194 0.82716226999999998 0.10500627999999999 0.69782025000000003 0.10500681000000001 0.80466819000000001 0.099998534 0.82716226999999998 0.10952413 0.69782025000000003 0.10952401 0.80466819000000001 0.10500687 0.82716226999999998 0.10952407 0.82716221000000001 0.069849177999999998 0.10437146999999999 0.072692320000000005 0.094010800000000005 0.080473482999999998 0.10570498 0.091407328999999996 0.10675082 0.10252789 0.10723057 0.11370872 0.10737173 0.14708420999999999 0.21588001000000001 0.14950942 0.20519397 0.15779951 0.21652447999999999 0.16891138 0.21698365 0.18015739 0.21690539 0.191203 0.21646923000000001 0.17952314 0.18674532999999999 0.10987876000000001 0.14421340999999999 0.032087027999999997 0.82716237999999997 0.037095128999999998 0.82716237999999997 0.027079045999999999 0.82716237999999997 0.022561788999999999 0.82716237999999997 0.15035995999999999 0.13193474999999999 0.08236"
+		+ "8672000000004 0.82716226999999998 0.077361763 0.82716226999999998 0.072352707000000002 0.82716226999999998 0.067835271000000003 0.82716226999999998 0.074466436999999996 0.14762011 0.10401006 0.076710358000000006 0.038147914999999998 0.16107450000000001 0.067641452000000005 0.20574516000000001 0.074567764999999994 0.20927494999999999 0.059963311999999998 0.20452982 0.052285920999999999 0.20574509999999999 0.15179455 0.25104465999999998 0.052285592999999998 0.25300449000000003 0.045359972999999998 0.24947542 0.059963311999999998 0.25422069000000003 0.067641391999999995 0.25300476 0.071488798000000006 0.13948926"
+		)
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
 		"pnts" " -s 404"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
@@ -26934,411 +25734,6 @@ createNode reference -n "arcade_cabanetRN";
 		"pnts[200]" " -type \"float3\" 0.0051450017000000004 1.7136335e-07 0.0034445764000000001"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" 0.0051450017000000004 1.7136335e-07 0.0034445764000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
-		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:stick|arcade_cabanet:stickShape" 
 		"pnts[201]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button" "rotatePivot" " -type \"double3\" 0.4949219319846479 2.87027601439588054 1.48829419767598692"
 		
@@ -27789,750 +26184,30 @@ createNode reference -n "arcade_cabanetRN";
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
 		"pnts[100]" " -type \"float3\" 0 1.7136335e-07 2.9802322e-07"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" 0 1.7136335e-07 2.9802322e-07"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
-		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button|arcade_cabanet:buttonShape" 
 		"pnts[101]" " -type \"float3\" -1.4901161000000001e-08 6.0535966999999996e-09 0"
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3" "rotatePivot" " -type \"double3\" 0.3430800809670374 2.87027601439588054 1.59462447967341525"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3" "scalePivot" " -type \"double3\" 0.3430800809670374 2.87027601439588054 1.59462447967341525"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts" " -s 102"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[0]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[1]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[2]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[3]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[4]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[5]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[6]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[7]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[8]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[9]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[10]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[11]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[12]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[13]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[14]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[15]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[16]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[17]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[18]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[19]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[20]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[21]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[22]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[23]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[24]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[25]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[26]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[27]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[28]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[29]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[30]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[31]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[32]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[33]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[34]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[35]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[36]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[37]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[38]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[39]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[40]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[41]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[42]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[43]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[44]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[45]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[46]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[47]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[48]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[49]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[50]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[51]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[52]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[53]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[54]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[55]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[56]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[57]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[58]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[59]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[60]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[61]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[62]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[63]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[64]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[65]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[66]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[67]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[68]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[69]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[70]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[71]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[72]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[73]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[74]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[75]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[76]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[77]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[78]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[79]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[80]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[81]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633086999999999"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[82]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[83]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633016000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[84]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[85]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[86]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[87]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[88]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[89]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[90]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[91]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[92]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[93]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[94]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[95]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[96]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[97]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[98]" " -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[99]" " -type \"float3\" -0.15184164 2.3841858000000002e-07 0.10633039"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[100]" " -type \"float3\" -0.15184212 1.1920929000000001e-07 0.10633063"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button3|arcade_cabanet:button3Shape" 
-		"pnts[101]" " -type \"float3\" -0.15184212 2.3841858000000002e-07 0.10633063"
+		"pt[0:101]" (" -s 102 -type \"float3\" -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633086999999999 -0.15184212 1.1920929000000001e-07 0.10633086999999999 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184164 1.1920929000000001e-07 0"
+		+ ".10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633086999999999 -0.15184212 1.1920929000000001e-07 0.10633086999999999 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0."
+		+ "15184164 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633086999999999 -0.15184164 1.1920929000000001e-07 0.10633016000000001 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633039 -0.15184212 2.3841858000000002e-07 0.10633039 -0.15184164 1.1920929000000001e-07"
+		+ " 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 2.3841858000000002e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 2.3841858000000002e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 2.3841858000000002e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633016000000001 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 2.3841858000000002e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184164 2.3841858000000002e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633016000000001 -0.15184212 2.3841858000000002e-07 0.10633086999999999 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184164 2.3841858000000002e-07 0.10633016000000001 -0.15184164 1.1920929000000001e-07 0.10633063 -0.1518416"
+		+ "4 2.3841858000000002e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184164 2.3841858000000002e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184164 2.3841858000000002e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633063 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633063 -0.15184212 1.1920929000000001e-07 0.10633039 -0.15184212 2.3841858000000002e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633039 -0.15184164 1.1920929000000001e-07 0.10633039 -0.15184164 2.3841858000000002e-07 0.10633039 -0.15184212 1.1920929000000001e-07 0.10633063 -0.15184212 2.3841858000000002e-07 0.10633063"
+		)
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2" "rotatePivot" " -type \"double3\" -0.28746323978972615 2.87027601439588054 1.38684474280944592"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2" "scalePivot" " -type \"double3\" -0.28746323978972615 2.87027601439588054 1.38684474280944592"
 		
 		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts" " -s 102"
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[0]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[1]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[2]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[3]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[4]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[5]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[6]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[7]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[8]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[9]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[10]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[11]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[12]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[13]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[14]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[15]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[16]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[17]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[18]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[19]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[20]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[21]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[22]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[23]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[24]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[25]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[26]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[27]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[28]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[29]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[30]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[31]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[32]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[33]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[34]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[35]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[36]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[37]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[38]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[39]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[40]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[41]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[42]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[43]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[44]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[45]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[46]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[47]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[48]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[49]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[50]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[51]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[52]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[53]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[54]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[55]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[56]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[57]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[58]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[59]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[60]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[61]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[62]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[63]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[64]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[65]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[66]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[67]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[68]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[69]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[70]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[71]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[72]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[73]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[74]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[75]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[76]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[77]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[78]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[79]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[80]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[81]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[82]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[83]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[84]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[85]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[86]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[87]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[88]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[89]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[90]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[91]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[92]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[93]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[94]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[95]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[96]" " -type \"float3\" -0.78238534999999998 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[97]" " -type \"float3\" -0.78238487000000001 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[98]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[99]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[100]" " -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001"
-		
-		2 "|arcade_cabanet:arcadecabnet|arcade_cabanet:button2|arcade_cabanet:button2Shape" 
-		"pnts[101]" " -type \"float3\" -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
-		
+		"pt[0:101]" (" -s 102 -type \"float3\" -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.1014"
+		+ "4949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.19209290"
+		+ "00000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0"
+		+ ".78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144901000000001 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.101449010"
+		+ "00000001 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 2.3841858000000002e-07 -0.10144901000000001 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144901000000001 -0.782384"
+		+ "87000000001 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 2.3841858000000002e-07 -0.10144949 -0.78238534999999998 1.1920929000000001e-07 -0.10144949 -0.78238487000000001 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144949 -0.78238534999999998 2.3841858000000002e-07 -0.10144949 -0.78238487000000001 1.1920929000000001e-07 -0.10144901000000001 -0.78238534999999998 2.3841858000000002e-07 -0.10144949"
+		)
 		5 3 "arcade_cabanetRN" "arcade_cabanet:openPBRSurface1SG.memberWireframeColor" 
 		"arcade_cabanetRN.placeHolderList[1]" ""
 		5 3 "arcade_cabanetRN" "arcade_cabanet:openPBRSurface1SG.memberWireframeColor" 
@@ -28745,6 +26420,189 @@ createNode groupId -n "groupId17";
 createNode groupId -n "groupId18";
 	rename -uid "912DDB3E-4D8E-B75B-E78A-D78101F982C7";
 	setAttr ".ihi" 0;
+createNode polyMapDel -n "polyMapDel1";
+	rename -uid "ACDC9406-4238-A9DB-4F96-FA9B8E892F92";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:5]";
+createNode polyAutoProj -n "polyAutoProj1";
+	rename -uid "B08E5D21-47F8-909E-91F2-FEBB88E417E6";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:5]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".s" -type "double3" 20.226042747497559 20.226042747497559 20.226042747497559 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode polyTweakUV -n "polyTweakUV1";
+	rename -uid "299450CD-4184-1464-84F2-82AEB37E4B50";
+	setAttr ".uopa" yes;
+	setAttr -s 5 ".uvtk";
+	setAttr ".uvtk[4]" -type "float2" -0.038562641 0.0099962354 ;
+	setAttr ".uvtk[5]" -type "float2" -0.39007026 -0.34591454 ;
+	setAttr ".uvtk[6]" -type "float2" -0.37673646 -0.35908329 ;
+	setAttr ".uvtk[7]" -type "float2" -0.025228903 -0.0031725764 ;
+createNode polyMapSewMove -n "polyMapSewMove1";
+	rename -uid "6F1EDD7C-431C-7961-60B4-3E822F7EFD72";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[3]";
+createNode polyTweakUV -n "polyTweakUV2";
+	rename -uid "32A4C7E3-4468-66BE-7FEB-B399F0B9D87C";
+	setAttr ".uopa" yes;
+	setAttr -s 5 ".uvtk";
+	setAttr ".uvtk[12]" -type "float2" -0.024527311 -3.7020072e-08 ;
+	setAttr ".uvtk[13]" -type "float2" -0.027814269 4.4470653e-08 ;
+	setAttr ".uvtk[14]" -type "float2" -0.027814269 -6.9327652e-05 ;
+	setAttr ".uvtk[15]" -type "float2" -0.024527311 -6.9357222e-05 ;
+createNode polyMapSewMove -n "polyMapSewMove2";
+	rename -uid "FF2D367D-45EF-35FF-16B2-35A033F25BBE";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[10]";
+createNode polyTweakUV -n "polyTweakUV3";
+	rename -uid "1A8CE5E8-4B04-ED2A-9D47-65B21D050B83";
+	setAttr ".uopa" yes;
+	setAttr -s 13 ".uvtk";
+	setAttr ".uvtk[4]" -type "float2" 0.54077864 0.23618734 ;
+	setAttr ".uvtk[5]" -type "float2" 0.5407787 0.23618734 ;
+	setAttr ".uvtk[6]" -type "float2" 0.5407787 0.23618734 ;
+	setAttr ".uvtk[7]" -type "float2" 0.54077876 0.23618734 ;
+	setAttr ".uvtk[8]" -type "float2" -0.37309599 0.0019207743 ;
+	setAttr ".uvtk[9]" -type "float2" -0.37638319 0.0019207036 ;
+	setAttr ".uvtk[10]" -type "float2" -0.37638319 0.0018512642 ;
+	setAttr ".uvtk[11]" -type "float2" -0.37309599 0.0018513426 ;
+	setAttr ".uvtk[12]" -type "float2" 0.54077876 0.23618735 ;
+	setAttr ".uvtk[13]" -type "float2" 0.54077864 0.23618735 ;
+	setAttr ".uvtk[14]" -type "float2" 0.54077864 0.23618734 ;
+	setAttr ".uvtk[19]" -type "float2" 0.54077876 0.23618735 ;
+createNode polyMapSewMove -n "polyMapSewMove3";
+	rename -uid "54E1FFAD-4990-822C-4B1A-E88E5DAC353D";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[7]";
+createNode polyTweakUV -n "polyTweakUV4";
+	rename -uid "8206F030-4C18-8A27-6008-FEACDDEF2EB1";
+	setAttr ".uopa" yes;
+	setAttr -s 4 ".uvtk[0:3]" -type "float2" -0.78175426 -0.01340319 -0.4302468
+		 -0.36931399 -0.41691291 -0.35614502 -0.76842058 -0.00023440877;
+createNode polyMapSewMove -n "polyMapSewMove4";
+	rename -uid "4AD698B3-462E-9272-8C0F-F485F0D9FE85";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[1]";
+createNode polyTweakUV -n "polyTweakUV5";
+	rename -uid "BC2F0775-40DA-686C-61FE-77BEA0F07ED7";
+	setAttr ".uopa" yes;
+	setAttr -s 16 ".uvtk[0:15]" -type "float2" 0.21881053 0.87797159 -0.13920218
+		 0.97756934 -0.14293343 0.96415669 0.21507926 0.86455911 -1.060532331 -0.14534755
+		 -0.70287752 -0.046057433 -0.70659733 -0.03265835 -1.064252257 -0.13194847 -0.15634573
+		 0.96788913 -0.33308017 0.33260074 -0.31966799 0.32886812 -1.24044108 0.50270498 -1.25383973
+		 0.49898398 -1.077650905 -0.13566944 0.038344685 0.22927046 -0.88278639 0.60199505;
+createNode lambert -n "lambert2";
+	rename -uid "C33630EC-4AD8-3BDB-46E7-57AA579278AF";
+createNode shadingEngine -n "lambert2SG";
+	rename -uid "3FE3668D-49C8-5E12-9EBD-FA8E8039D85F";
+	setAttr ".ihi" 0;
+	setAttr -s 4 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "ABB7A1E7-4A9D-E482-928D-43B44B714AB9";
+createNode file -n "Sceen2texture_1";
+	rename -uid "F5D22324-4F5B-ABC3-C4AD-D7B2A701B972";
+	setAttr ".ftn" -type "string" "C:/Users/kitan/GitRepos/Essentials/Essentials-1200/DAGV1100and1200/Maya//sourceimages/Sceen2texture.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture1";
+	rename -uid "4E371AB0-43DD-3482-0925-09BC2FCBEE43";
+createNode polyMapDel -n "polyMapDel2";
+	rename -uid "CB21A2B1-4231-F98F-FD33-F4905745EB20";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:5]";
+createNode polyAutoProj -n "polyAutoProj2";
+	rename -uid "2241FBDC-4115-FD58-4B8D-60BFF3924C7A";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:5]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".s" -type "double3" 21.334865570068359 21.334865570068359 21.334865570068359 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode polyTweakUV -n "polyTweakUV6";
+	rename -uid "91613BCB-4E09-D6CD-79BE-E4B658FD3C15";
+	setAttr ".uopa" yes;
+	setAttr -s 5 ".uvtk";
+	setAttr ".uvtk[20]" -type "float2" -0.36590374 -0.48795089 ;
+	setAttr ".uvtk[21]" -type "float2" 0.11838147 -0.0036655664 ;
+	setAttr ".uvtk[22]" -type "float2" 0.10789016 0.0068257451 ;
+	setAttr ".uvtk[23]" -type "float2" -0.37639505 -0.47745958 ;
+createNode polyMapSewMove -n "polyMapSewMove5";
+	rename -uid "17A7003E-4284-EB0B-0854-BDBD151351F3";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[2]";
+createNode polyTweakUV -n "polyTweakUV7";
+	rename -uid "9A59F396-4997-F152-643C-A29FAB0CE581";
+	setAttr ".uopa" yes;
+	setAttr -s 5 ".uvtk";
+	setAttr ".uvtk[16]" -type "float2" 0.048376679 0.011890024 ;
+	setAttr ".uvtk[17]" -type "float2" 0.53266191 0.49617526 ;
+	setAttr ".uvtk[18]" -type "float2" 0.52217066 0.50666654 ;
+	setAttr ".uvtk[19]" -type "float2" 0.037885427 0.022381216 ;
+createNode polyMapSewMove -n "polyMapSewMove6";
+	rename -uid "FFA10020-45A8-2829-E805-A3ABF419BEB4";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[0]";
+createNode polyTweakUV -n "polyTweakUV8";
+	rename -uid "945CED90-48ED-CCF7-AAB0-1CA454A6277A";
+	setAttr ".uopa" yes;
+	setAttr -s 4 ".uvtk[0:3]" -type "float2" 0.50041074 5.9604645e-08
+		 0.50041074 5.9604645e-08 0.50041074 5.9604645e-08 0.50041074 5.9604645e-08;
+createNode polyMapSewMove -n "polyMapSewMove7";
+	rename -uid "998662F3-4348-022D-AA9C-FB953FCD5B21";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[11]";
+createNode polyTweakUV -n "polyTweakUV9";
+	rename -uid "9241C0D3-41CF-D84F-8692-88AD0356434C";
+	setAttr ".uopa" yes;
+	setAttr -s 5 ".uvtk";
+	setAttr ".uvtk[4]" -type "float2" -0.40864614 -0.49984068 ;
+	setAttr ".uvtk[5]" -type "float2" -0.40864614 -0.49984068 ;
+	setAttr ".uvtk[6]" -type "float2" -0.40864614 -0.49984068 ;
+	setAttr ".uvtk[7]" -type "float2" -0.40864614 -0.49984068 ;
+createNode polyMapSewMove -n "polyMapSewMove8";
+	rename -uid "21AFEC5F-42F5-E618-D313-9AA755FBBB2A";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[6]";
+createNode polyTweakUV -n "polyTweakUV10";
+	rename -uid "2EBAC610-40E3-8FDE-6DC0-B59B7D3149AA";
+	setAttr ".uopa" yes;
+	setAttr -s 16 ".uvtk[0:15]" -type "float2" -0.28535864 -0.11778673 -0.28535864
+		 0.27033174 -0.29356495 0.27033174 -0.29356495 -0.11778673 0.39103079 0.30145603 0.39103079
+		 0.69425523 0.38272536 0.69425523 0.38272536 0.30145603 -0.00066125393 0.69425523
+		 -0.00066125393 0.30145603 0.093459412 0.27033174 0.093459472 -0.11778685 -0.28535858
+		 -0.12599319 0.093459532 -0.12599343 -0.00066125393 0.29315042 0.38272539 0.29315048;
+createNode groupId -n "groupId20";
+	rename -uid "CB9617CE-411F-A296-7432-9E9B935D3E6E";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId21";
+	rename -uid "115CA79C-4AAB-F566-0DD7-9284164D6188";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts1";
+	rename -uid "8C7137AB-40D8-698D-1C37-14B97452EC0F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[0]" "f[3:4]";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "5936C872-4378-9B35-0A45-309B4D3E0326";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" 11212.696983158103 -9323.1050414735037 ;
+	setAttr ".tgi[0].vh" -type "double2" 12166.028468387873 -8507.0911708380881 ;
+	setAttr -s 4 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 11245.7138671875;
+	setAttr ".tgi[0].ni[0].y" -8604.2861328125;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 11552.857421875;
+	setAttr ".tgi[0].ni[1].y" -8604.2861328125;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 11698.8330078125;
+	setAttr ".tgi[0].ni[2].y" -8949.033203125;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" 11920.26171875;
+	setAttr ".tgi[0].ni[3].y" -8949.033203125;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -28756,18 +26614,18 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 12 ".st";
+	setAttr -s 13 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 16 ".s";
+	setAttr -s 17 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 6 ".u";
+	setAttr -s 7 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 7 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 6 ".tx";
+	setAttr -s 7 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -28775,10 +26633,11 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 17 ".dsm";
+	setAttr -s 14 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
+select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
@@ -28797,8 +26656,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "legShape.iog" "chairRN.phl[1]";
 connectAttr "seatShape.iog" "chairRN.phl[2]";
 connectAttr "cupShape.iog" "slushiecupRN.phl[1]";
@@ -28899,6 +26756,12 @@ connectAttr "groupId13.msg" "arcade_cabanetRN.phl[75]";
 connectAttr "groupId15.msg" "arcade_cabanetRN.phl[76]";
 connectAttr "groupId16.msg" "arcade_cabanetRN.phl[77]";
 connectAttr "groupId18.msg" "arcade_cabanetRN.phl[78]";
+connectAttr "groupId21.id" "pCubeShape1.iog.og[1].gid";
+connectAttr "lambert2SG.mwc" "pCubeShape1.iog.og[1].gco";
+connectAttr "groupParts1.og" "pCubeShape1.i";
+connectAttr "polyTweakUV10.uvtk[0]" "pCubeShape1.uvst[0].uvtw";
+connectAttr "polyTweakUV5.out" "pCubeShape3.i";
+connectAttr "polyTweakUV5.uvtk[0]" "pCubeShape3.uvst[0].uvtw";
 connectAttr "groupId1.id" "arcadecabnetShape.iog.og[1].gid";
 connectAttr "groupId2.id" "arcadecabnetShape.iog.og[2].gid";
 connectAttr "groupId3.id" "arcadecabnetShape.ciog.cog[1].cgid";
@@ -28919,16 +26782,85 @@ connectAttr "groupId17.id" "arcadecabnet5Shape.iog.og[2].gid";
 connectAttr "groupId18.id" "arcadecabnet5Shape.ciog.cog[4].cgid";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "layerManager.dli[2]" "blockout.id";
 connectAttr "sharedReferenceNode.sr" "slushiecupRN.sr";
+connectAttr "|pCube3|polySurfaceShape1.o" "polyMapDel1.ip";
+connectAttr "polyMapDel1.out" "polyAutoProj1.ip";
+connectAttr "pCubeShape3.wm" "polyAutoProj1.mp";
+connectAttr "polyAutoProj1.out" "polyTweakUV1.ip";
+connectAttr "polyTweakUV1.out" "polyMapSewMove1.ip";
+connectAttr "polyMapSewMove1.out" "polyTweakUV2.ip";
+connectAttr "polyTweakUV2.out" "polyMapSewMove2.ip";
+connectAttr "polyMapSewMove2.out" "polyTweakUV3.ip";
+connectAttr "polyTweakUV3.out" "polyMapSewMove3.ip";
+connectAttr "polyMapSewMove3.out" "polyTweakUV4.ip";
+connectAttr "polyTweakUV4.out" "polyMapSewMove4.ip";
+connectAttr "polyMapSewMove4.out" "polyTweakUV5.ip";
+connectAttr "Sceen2texture_1.oc" "lambert2.c";
+connectAttr "lambert2.oc" "lambert2SG.ss";
+connectAttr "pCubeShape3.iog" "lambert2SG.dsm" -na;
+connectAttr "pCubeShape22.iog" "lambert2SG.dsm" -na;
+connectAttr "pCubeShape1.iog.og[1]" "lambert2SG.dsm" -na;
+connectAttr "pCubeShape1.iog" "lambert2SG.dsm" -na;
+connectAttr "groupId21.msg" "lambert2SG.gn" -na;
+connectAttr "lambert2SG.msg" "materialInfo1.sg";
+connectAttr "lambert2.msg" "materialInfo1.m";
+connectAttr "Sceen2texture_1.msg" "materialInfo1.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "Sceen2texture_1.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "Sceen2texture_1.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "Sceen2texture_1.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "Sceen2texture_1.ws";
+connectAttr "place2dTexture1.c" "Sceen2texture_1.c";
+connectAttr "place2dTexture1.tf" "Sceen2texture_1.tf";
+connectAttr "place2dTexture1.rf" "Sceen2texture_1.rf";
+connectAttr "place2dTexture1.mu" "Sceen2texture_1.mu";
+connectAttr "place2dTexture1.mv" "Sceen2texture_1.mv";
+connectAttr "place2dTexture1.s" "Sceen2texture_1.s";
+connectAttr "place2dTexture1.wu" "Sceen2texture_1.wu";
+connectAttr "place2dTexture1.wv" "Sceen2texture_1.wv";
+connectAttr "place2dTexture1.re" "Sceen2texture_1.re";
+connectAttr "place2dTexture1.of" "Sceen2texture_1.of";
+connectAttr "place2dTexture1.r" "Sceen2texture_1.ro";
+connectAttr "place2dTexture1.n" "Sceen2texture_1.n";
+connectAttr "place2dTexture1.vt1" "Sceen2texture_1.vt1";
+connectAttr "place2dTexture1.vt2" "Sceen2texture_1.vt2";
+connectAttr "place2dTexture1.vt3" "Sceen2texture_1.vt3";
+connectAttr "place2dTexture1.vc1" "Sceen2texture_1.vc1";
+connectAttr "place2dTexture1.o" "Sceen2texture_1.uv";
+connectAttr "place2dTexture1.ofs" "Sceen2texture_1.fs";
+connectAttr "polySurfaceShape2.o" "polyMapDel2.ip";
+connectAttr "polyMapDel2.out" "polyAutoProj2.ip";
+connectAttr "pCubeShape1.wm" "polyAutoProj2.mp";
+connectAttr "polyAutoProj2.out" "polyTweakUV6.ip";
+connectAttr "polyTweakUV6.out" "polyMapSewMove5.ip";
+connectAttr "polyMapSewMove5.out" "polyTweakUV7.ip";
+connectAttr "polyTweakUV7.out" "polyMapSewMove6.ip";
+connectAttr "polyMapSewMove6.out" "polyTweakUV8.ip";
+connectAttr "polyTweakUV8.out" "polyMapSewMove7.ip";
+connectAttr "polyMapSewMove7.out" "polyTweakUV9.ip";
+connectAttr "polyTweakUV9.out" "polyMapSewMove8.ip";
+connectAttr "polyMapSewMove8.out" "polyTweakUV10.ip";
+connectAttr "polyTweakUV10.out" "groupParts1.ig";
+connectAttr "groupId21.id" "groupParts1.gi";
+connectAttr "lambert2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Sceen2texture_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
+connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "Sceen2texture_1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pCubeShape7.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape8.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape9.iog" ":initialShadingGroup.dsm" -na;
